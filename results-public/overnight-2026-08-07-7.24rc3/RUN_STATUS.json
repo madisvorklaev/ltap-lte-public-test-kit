@@ -1,16 +1,16 @@
 {
-  "state": "aborted",
+  "state": "smoke",
   "matrix_version": "0.1.0",
-  "git_commit": "781688c571d8317dfc21a11401801e706ce0bebc",
-  "updated_utc": "2026-08-07T20:42:41.128+00:00",
+  "git_commit": "f3dbb7f23edf8771e0ef0ba2377b68c4572153f9",
+  "updated_utc": "2026-08-07T20:45:35.555+00:00",
   "original_band_settings": {
     "lte1": "",
     "lte2": ""
   },
-  "bands_restored": true,
-  "next_configuration": "R1-M0-AUTO-AUTO",
+  "bands_restored": false,
+  "next_configuration": "SMOKE-2x1M",
   "last_completed_configuration": "SMOKE-2x1M",
-  "last_status": "RUN_OK",
+  "last_status": "PASS_DUAL",
   "final_registration_ok": true,
   "current_configuration": null,
   "abort_reason": "stopped after smoke gate logic bug allowed failed smoke to start R1-M0"
