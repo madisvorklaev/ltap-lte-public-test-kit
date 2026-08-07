@@ -35,6 +35,14 @@ MATRIX = [
     ("M9", "B3-B1", "3", "1"),
 ]
 
+SAFE_LTE_KEYS = {
+    "status", "registration-status", "manufacturer", "model", "revision",
+    "current-operator", "data-class", "session-uptime", "primary-band",
+    "ca-band", "rssi", "rsrp", "rsrq", "sinr", "cqi", "ri",
+    "lac", "cell-id", "current-cellid", "enb-id", "sector-id",
+    "phy-cellid", "access-technology",
+}
+
 
 def save_json(path: Path, obj: Any) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -148,6 +156,13 @@ def update_status(**fields: Any) -> None:
     current.update(fields)
     current["updated_utc"] = base.now_utc()
     save_json(path, current)
+
+
+def public_lte_snapshot(snapshot: dict[str, Any]) -> dict[str, Any]:
+    return {
+        iface: {key: value for key, value in (data or {}).items() if key in SAFE_LTE_KEYS}
+        for iface, data in snapshot.items()
+    }
 
 
 def append_summary(group_id: str, round_name: str, matrix_id: str, lte1_bands: str, lte2_bands: str, raw_dir: Path) -> None:
@@ -323,7 +338,7 @@ def main() -> int:
                 set_lte_band(router, "lte1", original["lte1"])
                 set_lte_band(router, "lte2", original["lte2"])
                 ok, snapshot = wait_registered(router, ["lte1", "lte2"], timeout_s=120, stable_s=10)
-                save_json(PUBLIC_ROOT / "final_lte_monitor.json", snapshot)
+                save_json(PUBLIC_ROOT / "final_lte_monitor.json", public_lte_snapshot(snapshot))
                 verify_router_rules(router)
                 update_status(bands_restored=True, final_registration_ok=ok)
             except Exception as exc:
