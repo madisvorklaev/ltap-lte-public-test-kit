@@ -1,5 +1,5 @@
 {
-  "state": "aborted",
+  "state": "server_reselected_before_matrix",
   "matrix_version": "0.1.0",
   "git_commit": "04027562fe74ab26a474d4ba8928990e4282683e",
   "updated_utc": "2026-08-07T20:47:20.920+00:00",
@@ -13,5 +13,9 @@
   "last_status": "FAIL_DUAL",
   "final_registration_ok": true,
   "current_configuration": null,
-  "abort_reason": "smoke gate failed: FAIL_DUAL"
+  "abort_reason": "smoke gate failed: FAIL_DUAL",
+  "previous_server": "iperf-ams-nl.eranium.net / 217.18.95.142",
+  "server_reselection_reason": "existing pinned host had repeated server-busy/timeouts before matrix start",
+  "new_server": "ams.speedtest.clouvider.net / 194.127.172.176",
+  "new_dual_ports": "lte1=5203,lte2=5204"
 }
