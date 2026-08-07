@@ -1,0 +1,4 @@
+{"timestamp_utc": "2026-08-07T20:46:24.083+00:00", "path": "lte1", "interface": "lte1", "event": "primary_band_changed", "old": "B20", "new": "B3"}
+{"timestamp_utc": "2026-08-07T20:46:26.083+00:00", "path": "lte1", "interface": "lte1", "event": "sinr_low_started", "sinr": 1.0}
+{"timestamp_utc": "2026-08-07T20:46:32.083+00:00", "path": "lte1", "interface": "lte1", "event": "sinr_low_ended", "sinr": 14.0}
+{"timestamp_utc": "2026-08-07T20:46:33.083+00:00", "path": "lte1", "interface": "lte1", "event": "primary_band_changed", "old": "B3", "new": "B8"}
