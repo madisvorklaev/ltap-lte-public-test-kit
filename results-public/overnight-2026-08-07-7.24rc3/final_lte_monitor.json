@@ -12,14 +12,13 @@
     "sector-id": "111",
     "phy-cellid": "69",
     "data-class": "LTE",
-    "session-uptime": "56m30s",
+    "session-uptime": "59m24s",
     "primary-band": "B1@15Mhz earfcn: 523 phy-cellid: 69",
     "cqi": "0",
-    "ri": "2",
     "rssi": "-56dBm",
     "rsrp": "-88dBm",
-    "rsrq": "-14dB",
-    "sinr": "12dB"
+    "rsrq": "-12.5dB",
+    "sinr": "7dB"
   },
   "lte2": {
     "status": "registered",
@@ -34,12 +33,12 @@
     "sector-id": "111",
     "phy-cellid": "69",
     "data-class": "LTE",
-    "session-uptime": "56m26s",
+    "session-uptime": "59m20s",
     "primary-band": "B3@15Mhz earfcn: 1875 phy-cellid: 69",
     "cqi": "0",
     "rssi": "-62dBm",
     "rsrp": "-94dBm",
-    "rsrq": "-13.5dB",
+    "rsrq": "-12.5dB",
     "sinr": "5dB"
   }
 }
