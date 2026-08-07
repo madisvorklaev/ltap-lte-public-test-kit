@@ -265,6 +265,11 @@ def run_group(group_id: str, round_name: str, matrix_id: str, lte1_bands: str, l
         run(["python3", "analyze_run.py", str(run_dir)], check=True)
         run(["python3", "sanitize_public_results.py", str(run_dir)], check=True)
         append_summary(group_id, round_name, matrix_id, lte1_bands, lte2_bands, run_dir)
+        try:
+            summary = json.loads((run_dir / "group_summary.json").read_text(encoding="utf-8"))
+            return str(summary.get("group_status") or "RUN_OK"), run_dir
+        except Exception:
+            pass
     return ("RUN_OK" if cp.returncode == 0 else f"RUN_RC_{cp.returncode}"), run_dir
 
 
@@ -295,6 +300,10 @@ def main() -> int:
         smoke_status, smoke_dir = run_group("SMOKE-2x1M", "smoke", "SMOKE", original["lte1"], original["lte2"], 20, bitrate="1M")
         update_status(last_completed_configuration="SMOKE-2x1M", last_status=smoke_status)
         sanitize_and_push("SMOKE-2x1M", "test: overnight smoke 2x1M")
+        if smoke_status != "PASS_DUAL":
+            update_status(state="aborted", abort_reason=f"smoke gate failed: {smoke_status}")
+            sanitize_and_push("SMOKE-2x1M", "test: abort overnight after failed smoke gate")
+            return 2
         if args.smoke_only:
             return 0
 
