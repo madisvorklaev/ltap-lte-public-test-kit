@@ -1,0 +1,31 @@
+{
+  "collector_version": "0.3.0",
+  "created_local": "2026-08-07T21:05:06+03:00",
+  "created_utc": "2026-08-07T18:05:06.978+00:00",
+  "tag": "after_fix_lte2_solo",
+  "path": "lte2",
+  "lte_interface": "lte2",
+  "source_ip": "192.168.103.202",
+  "linux_interface": "eno1",
+  "server_hostname": "iperf-ams-nl.eranium.net",
+  "server_ipv4": "217.18.95.142",
+  "server_port": 5201,
+  "port_probe": {
+    "attempts": [
+      {
+        "port": 5201,
+        "rc": 0,
+        "stderr": "",
+        "iperf_error": null,
+        "bps": 11842060.832272217
+      }
+    ]
+  },
+  "protocol": "udp",
+  "direction": "upload",
+  "duration_s": 120,
+  "warmup_s": 5,
+  "cooldown_s": 5,
+  "target_bitrate": "6M",
+  "packet_length": 1200
+}

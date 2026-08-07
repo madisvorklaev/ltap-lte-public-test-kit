@@ -1,0 +1,34 @@
+{
+  "collector_version": "0.4.1",
+  "created_local": "2026-08-07T22:28:48+03:00",
+  "created_utc": "2026-08-07T19:28:48.105+00:00",
+  "tag": "r7233_five_min_dual_lte1",
+  "path": "lte1",
+  "lte_interface": "lte1",
+  "source_ip": "192.168.101.201",
+  "linux_interface": "eno1",
+  "server_hostname": "iperf-ams-nl.eranium.net",
+  "server_ipv4": "217.18.95.142",
+  "server_port": 5201,
+  "port_probe": {
+    "attempts": [
+      {
+        "port": 5201,
+        "rc": 0,
+        "stderr": "",
+        "iperf_error": null,
+        "bps": 5898918.375613196
+      }
+    ]
+  },
+  "protocol": "udp",
+  "direction": "upload",
+  "duration_s": 300,
+  "warmup_s": 5,
+  "cooldown_s": 5,
+  "target_bitrate": "6M",
+  "packet_length": 1200,
+  "routing_mode": "source_ip_lab_mode",
+  "routing_table": "to-lte1",
+  "source_rule_comment": "ELMO TEST: source via lte1"
+}

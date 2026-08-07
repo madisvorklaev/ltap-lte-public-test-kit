@@ -1,0 +1,2 @@
+{"timestamp_utc": "2026-08-07T19:04:35.035+00:00", "type": "primary_band_changed", "interface": "lte1", "old": "", "new": "B20@10Mhz earfcn: 6200 phy-cellid: 69"}
+{"timestamp_utc": "2026-08-07T19:04:56.035+00:00", "type": "sinr_low_ended", "interface": "lte1", "sinr": 4.0, "threshold": 3.0}

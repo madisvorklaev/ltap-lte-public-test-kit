@@ -1,0 +1,37 @@
+{
+  "routing_mode": "source_ip_lab_mode",
+  "linux_interface": "eno1",
+  "router": {
+    "host": "192.168.101.254",
+    "user": "admin",
+    "port": 22,
+    "ssh_key": "~/.ssh/ltap_test_ed25519"
+  },
+  "paths": {
+    "lte1": {
+      "source_ip": "192.168.101.201",
+      "lte_interface": "lte1",
+      "routing_table": "to-lte1",
+      "source_rule_comment": "ELMO TEST: source via lte1"
+    },
+    "lte2": {
+      "source_ip": "192.168.101.202",
+      "lte_interface": "lte2",
+      "routing_table": "to-lte2",
+      "source_rule_comment": "ELMO TEST: source via lte2"
+    }
+  },
+  "ping_target": "1.1.1.1",
+  "public_server_candidates": [
+    {
+      "hostname": "iperf-ams-nl.eranium.net",
+      "ports": [5201, 5202, 5203, 5204, 5205, 5206, 5207, 5208, 5209, 5210],
+      "note": "Previously validated from this lab; re-test availability before a new campaign."
+    },
+    {
+      "hostname": "ams.speedtest.clouvider.net",
+      "ports": [5200, 5201, 5202, 5203, 5204, 5205, 5206, 5207, 5208, 5209],
+      "note": "Current public-list UDP-capable Amsterdam candidate."
+    }
+  ]
+}

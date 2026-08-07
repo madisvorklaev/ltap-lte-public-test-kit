@@ -1,0 +1,27 @@
+{
+  "timestamp_utc": "2026-08-07T16:31:47.771+00:00",
+  "interfaces": [
+    "lte1",
+    "lte2"
+  ],
+  "resource": {
+    "rc": 0,
+    "stdout": "                   uptime: 26m52s             \n                  version: 7.23.2 (stable)    \n               build-time: 2026-07-03 09:08:08\n         factory-software: 7.11               \n              free-memory: 65.7MiB            \n             total-memory: 128.0MiB           \n                      cpu: MIPS 1004Kc V2.15  \n                cpu-count: 4                  \n            cpu-frequency: 880MHz             \n                 cpu-load: 2%                 \n           free-hdd-space: 3668.0KiB          \n          total-hdd-space: 16.0MiB            \n  write-sect-since-reboot: 378                \n         write-sect-total: 154752             \n        architecture-name: mmips              \n               board-name: LtAP-2HnD          \n                 platform: MikroTik           \n\n",
+    "stderr": ""
+  },
+  "routerboard": {
+    "rc": 0,
+    "stdout": "       routerboard: yes        \n             model: LtAP-2HnD  \n          revision: r2         \n     serial-number: HJT0AWNMNW7\n     firmware-type: mt7621L    \n  factory-firmware: 7.16.2     \n  current-firmware: 7.23.2     \n  upgrade-firmware: 7.23.2     \n\n",
+    "stderr": ""
+  },
+  "identity": {
+    "rc": 0,
+    "stdout": "  name: LtAP\n\n",
+    "stderr": ""
+  },
+  "lte_config": {
+    "rc": 0,
+    "stdout": "Flags: X - DISABLED; R - RUNNING; I - INACTIVE \n 0  R  default-name=\"lte1\" name=\"lte1\" mtu=1500 apn-profiles=default \n       allow-roaming=yes sms-read=no sms-protocol=auto network-mode=3g,lte \n       band=\"\" \n\n 1     default-name=\"lte2\" name=\"lte2\" mtu=1500 apn-profiles=default \n       allow-roaming=yes sms-read=no sms-protocol=auto network-mode=3g,lte \n       band=\"\" \n\n",
+    "stderr": ""
+  }
+}

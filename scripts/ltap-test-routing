@@ -1,0 +1,68 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+LTAP_IF="${LTAP_IF:-eno1}"
+LTAP_GW="${LTAP_GW:-192.168.101.254}"
+LTE1_IP="${LTE1_IP:-192.168.101.201}"
+LTE2_IP="${LTE2_IP:-192.168.101.202}"
+LTE_NET="${LTE_NET:-192.168.101.0/24}"
+RULE1_PRIORITY="${RULE1_PRIORITY:-20100}"
+RULE2_PRIORITY="${RULE2_PRIORITY:-20200}"
+TABLE1="${TABLE1:-ltap-lte1}"
+TABLE2="${TABLE2:-ltap-lte2}"
+
+wait_for_ip() {
+  local ip="$1"
+  local deadline=$((SECONDS + 20))
+  while (( SECONDS < deadline )); do
+    if ip -4 addr show dev "$LTAP_IF" | grep -Eq "\\binet ${ip}/"; then
+      return 0
+    fi
+    sleep 1
+  done
+  echo "Timed out waiting for ${ip} on ${LTAP_IF}" >&2
+  return 1
+}
+
+delete_rule_priority() {
+  local priority="$1"
+  while ip rule show priority "$priority" | grep -q .; do
+    ip rule del priority "$priority" || break
+  done
+}
+
+apply_routes() {
+  ip link show "$LTAP_IF" >/dev/null
+  wait_for_ip "$LTE1_IP"
+  wait_for_ip "$LTE2_IP"
+
+  ip route replace table "$TABLE1" "$LTE_NET" dev "$LTAP_IF" src "$LTE1_IP"
+  ip route replace table "$TABLE1" default via "$LTAP_GW" dev "$LTAP_IF" src "$LTE1_IP"
+  ip route replace table "$TABLE2" "$LTE_NET" dev "$LTAP_IF" src "$LTE2_IP"
+  ip route replace table "$TABLE2" default via "$LTAP_GW" dev "$LTAP_IF" src "$LTE2_IP"
+
+  delete_rule_priority "$RULE1_PRIORITY"
+  delete_rule_priority "$RULE2_PRIORITY"
+  ip rule add priority "$RULE1_PRIORITY" from "${LTE1_IP}/32" lookup "$TABLE1"
+  ip rule add priority "$RULE2_PRIORITY" from "${LTE2_IP}/32" lookup "$TABLE2"
+}
+
+remove_routes() {
+  delete_rule_priority "$RULE1_PRIORITY"
+  delete_rule_priority "$RULE2_PRIORITY"
+  ip route flush table "$TABLE1" || true
+  ip route flush table "$TABLE2" || true
+}
+
+case "${1:-apply}" in
+  apply|up|vpn-up|dhcp4-change|connectivity-change)
+    apply_routes
+    ;;
+  down|vpn-down)
+    remove_routes
+    ;;
+  *)
+    echo "Usage: $0 [apply|up|down|dhcp4-change|connectivity-change]" >&2
+    exit 2
+    ;;
+esac

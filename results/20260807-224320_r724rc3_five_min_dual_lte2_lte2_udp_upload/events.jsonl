@@ -1,0 +1,6 @@
+{"timestamp_utc": "2026-08-07T19:44:32.279+00:00", "type": "cell_changed", "interface": "lte2", "old": "257028669", "new": "257028719"}
+{"timestamp_utc": "2026-08-07T19:44:33.279+00:00", "type": "primary_band_changed", "interface": "lte2", "old": "B3@15Mhz earfcn: 1875 phy-cellid: 69", "new": "B38@20Mhz earfcn: 37900 phy-cellid: 3"}
+{"timestamp_utc": "2026-08-07T19:44:33.279+00:00", "type": "ca_appeared", "interface": "lte2", "ca_band": "B38@20Mhz earfcn: 38098 phy-cellid: 3"}
+{"timestamp_utc": "2026-08-07T19:45:37.279+00:00", "type": "primary_band_changed", "interface": "lte2", "old": "B38@20Mhz earfcn: 37900 phy-cellid: 3", "new": "B3@15Mhz earfcn: 1875 phy-cellid: 69"}
+{"timestamp_utc": "2026-08-07T19:45:37.279+00:00", "type": "ca_disappeared", "interface": "lte2", "old": "B38@20Mhz earfcn: 38098 phy-cellid: 3"}
+{"timestamp_utc": "2026-08-07T19:46:37.279+00:00", "type": "primary_band_changed", "interface": "lte2", "old": "B3@15Mhz earfcn: 1875 phy-cellid: 69", "new": "B1@15Mhz earfcn: 523 phy-cellid: 69"}

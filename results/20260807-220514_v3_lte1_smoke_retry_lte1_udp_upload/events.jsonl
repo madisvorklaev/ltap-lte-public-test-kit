@@ -1,0 +1,1 @@
+{"timestamp_utc": "2026-08-07T19:05:26.272+00:00", "type": "primary_band_changed", "interface": "lte1", "old": "B20@10Mhz earfcn: 6200 phy-cellid: 69", "new": "B3@15Mhz earfcn: 1875 phy-cellid: 69"}

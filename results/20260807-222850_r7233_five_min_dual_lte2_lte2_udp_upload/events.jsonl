@@ -1,0 +1,2 @@
+{"timestamp_utc": "2026-08-07T19:34:00.422+00:00", "type": "primary_band_changed", "interface": "lte2", "old": "B38@20Mhz earfcn: 37900 phy-cellid: 3", "new": "B3@15Mhz earfcn: 1875 phy-cellid: 69"}
+{"timestamp_utc": "2026-08-07T19:34:00.422+00:00", "type": "ca_disappeared", "interface": "lte2", "old": "B38@20Mhz earfcn: 38098 phy-cellid: 3"}

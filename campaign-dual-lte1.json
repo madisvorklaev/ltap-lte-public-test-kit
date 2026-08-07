@@ -1,0 +1,16 @@
+{
+  "created_local": "2026-08-07T19:29:08+03:00",
+  "server_hostname": "iperf-ams-nl.eranium.net",
+  "server_ipv4": "217.18.95.142",
+  "all_resolved_ipv4": [
+    "217.18.95.142"
+  ],
+  "ports": [
+    5201,
+    5203,
+    5205,
+    5207,
+    5209
+  ],
+  "note": "Server IP is pinned for comparability. Do not silently change it mid-campaign. If the server becomes unavailable, start a new campaign."
+}

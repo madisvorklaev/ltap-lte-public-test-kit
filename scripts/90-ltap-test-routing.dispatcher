@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+LTAP_IF="eno1"
+
+IFACE="${1:-}"
+ACTION="${2:-}"
+
+if [[ "$IFACE" != "$LTAP_IF" ]]; then
+  exit 0
+fi
+
+case "$ACTION" in
+  up|dhcp4-change|connectivity-change)
+    /usr/local/sbin/ltap-test-routing apply
+    ;;
+  down)
+    /usr/local/sbin/ltap-test-routing down
+    ;;
+esac

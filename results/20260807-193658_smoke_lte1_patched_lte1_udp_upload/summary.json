@@ -1,0 +1,130 @@
+{
+  "test": {
+    "collector_version": "0.2.1",
+    "created_local": "2026-08-07T19:36:58+03:00",
+    "created_utc": "2026-08-07T16:36:58.716+00:00",
+    "tag": "smoke_lte1_patched",
+    "path": "lte1",
+    "lte_interface": "lte1",
+    "source_ip": "192.168.103.201",
+    "linux_interface": "eno1",
+    "server_hostname": "iperf-ams-nl.eranium.net",
+    "server_ipv4": "217.18.95.142",
+    "server_port": 5202,
+    "port_probe": {
+      "attempts": [
+        {
+          "port": 5201,
+          "rc": 1,
+          "stderr": "",
+          "iperf_error": "the server is busy running a test. try again later"
+        },
+        {
+          "port": 5202,
+          "rc": 0,
+          "stderr": "",
+          "iperf_error": null,
+          "bps": 5988811.415136097
+        }
+      ]
+    },
+    "protocol": "udp",
+    "direction": "upload",
+    "duration_s": 120,
+    "warmup_s": 5,
+    "cooldown_s": 5,
+    "target_bitrate": "6M",
+    "packet_length": 1200
+  },
+  "iperf": {
+    "bits_per_second": 5999979.450070384,
+    "mbps": 5.999979450070384,
+    "jitter_ms": 1.3897249531350566,
+    "lost_packets": 8266,
+    "packets": 75000,
+    "lost_percent": 11.021333333333333
+  },
+  "ping": {
+    "sent": 650,
+    "received": 650,
+    "loss_percent": 0.0,
+    "min_ms": 11.691,
+    "avg_ms": 35.767,
+    "max_ms": 317.845,
+    "mdev_ms": 26.624,
+    "p95_ms": 84.8,
+    "sample_count": 650
+  },
+  "radio_target": {
+    "rssi_median": -60.0,
+    "rssi_min": -60.0,
+    "rssi_max": -57.0,
+    "rsrp_median": -92.0,
+    "rsrp_min": -92.0,
+    "rsrp_max": -90.0,
+    "rsrq_median": -11.5,
+    "rsrq_min": -14.5,
+    "rsrq_max": -10.5,
+    "sinr_median": 7.0,
+    "sinr_min": 4.0,
+    "sinr_max": 11.0,
+    "cqi_median": 12.0,
+    "cqi_min": 0.0,
+    "cqi_max": 14.0,
+    "ri_median": 2.0,
+    "ri_min": 1.0,
+    "ri_max": 2.0,
+    "primary_bands_seen": [
+      "B1@15Mhz earfcn: 523 phy-cellid: 69",
+      "B3@15Mhz earfcn: 1875 phy-cellid: 69"
+    ],
+    "ca_bands_seen": [],
+    "ca_missing_samples": 131,
+    "samples": 131,
+    "statuses_seen": [
+      "registered"
+    ],
+    "cell_changes": 0,
+    "tx-byte_delta": 94240802,
+    "rx-byte_delta": 103171,
+    "tx-packet_delta": 76394,
+    "rx-packet_delta": 1082,
+    "tx-queue-drop_delta": 0
+  },
+  "radio_other": {
+    "lte2": {
+      "rssi_median": null,
+      "rssi_min": null,
+      "rssi_max": null,
+      "rsrp_median": null,
+      "rsrp_min": null,
+      "rsrp_max": null,
+      "rsrq_median": null,
+      "rsrq_min": null,
+      "rsrq_max": null,
+      "sinr_median": null,
+      "sinr_min": null,
+      "sinr_max": null,
+      "cqi_median": null,
+      "cqi_min": null,
+      "cqi_max": null,
+      "ri_median": null,
+      "ri_min": null,
+      "ri_max": null,
+      "primary_bands_seen": [],
+      "ca_bands_seen": [],
+      "ca_missing_samples": 131,
+      "samples": 131,
+      "statuses_seen": [
+        "radio off"
+      ],
+      "cell_changes": 0,
+      "tx-byte_delta": 0,
+      "rx-byte_delta": 0,
+      "tx-packet_delta": 0,
+      "rx-packet_delta": 0,
+      "tx-queue-drop_delta": 0
+    }
+  },
+  "path_verification": "PASS"
+}

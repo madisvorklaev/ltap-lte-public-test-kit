@@ -1,0 +1,11 @@
+{
+	"start":	{
+		"connected":	[],
+		"version":	"iperf 3.16",
+		"system_info":	"Linux E6430 6.8.0-137-generic #137-Ubuntu SMP PREEMPT_DYNAMIC Fri Jul 17 20:28:23 UTC 2026 x86_64"
+	},
+	"intervals":	[],
+	"end":	{
+	},
+	"error":	"the server is busy running a test. try again later"
+}

@@ -1,0 +1,37 @@
+{
+  "collector_version": "0.2.0",
+  "created_local": "2026-08-07T19:30:38+03:00",
+  "created_utc": "2026-08-07T16:30:38.988+00:00",
+  "tag": "setup_smoke_lte2",
+  "path": "lte2",
+  "lte_interface": "lte2",
+  "source_ip": "192.168.103.202",
+  "linux_interface": "eno1",
+  "server_hostname": "iperf-ams-nl.eranium.net",
+  "server_ipv4": "217.18.95.142",
+  "server_port": 5202,
+  "port_probe": {
+    "attempts": [
+      {
+        "port": 5201,
+        "rc": 1,
+        "stderr": "",
+        "iperf_error": "the server is busy running a test. try again later"
+      },
+      {
+        "port": 5202,
+        "rc": 0,
+        "stderr": "",
+        "iperf_error": null,
+        "bps": 12353516.69763016
+      }
+    ]
+  },
+  "protocol": "udp",
+  "direction": "upload",
+  "duration_s": 30,
+  "warmup_s": 5,
+  "cooldown_s": 5,
+  "target_bitrate": "4M",
+  "packet_length": 1200
+}
