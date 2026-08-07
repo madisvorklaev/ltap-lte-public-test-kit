@@ -2,12 +2,12 @@
   "state": "smoke",
   "matrix_version": "0.1.0",
   "git_commit": "f3dbb7f23edf8771e0ef0ba2377b68c4572153f9",
-  "updated_utc": "2026-08-07T20:45:35.555+00:00",
+  "updated_utc": "2026-08-07T20:45:49.390+00:00",
   "original_band_settings": {
     "lte1": "",
     "lte2": ""
   },
-  "bands_restored": false,
+  "bands_restored": true,
   "next_configuration": "SMOKE-2x1M",
   "last_completed_configuration": "SMOKE-2x1M",
   "last_status": "PASS_DUAL",
