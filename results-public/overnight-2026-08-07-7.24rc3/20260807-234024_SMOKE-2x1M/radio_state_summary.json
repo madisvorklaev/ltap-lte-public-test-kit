@@ -1,0 +1,56 @@
+{
+  "analyzer_version": "0.1.0",
+  "paths": {
+    "lte1": {
+      "path": "lte1",
+      "telemetry_sample_count": 41,
+      "radio_states": [
+        {
+          "primary_band": "B1",
+          "sample_count": 12,
+          "approx_dwell_s": 12
+        },
+        {
+          "primary_band": "B7",
+          "sample_count": 29,
+          "approx_dwell_s": 29
+        }
+      ],
+      "ca_bands_seen": [],
+      "pct_rtt_gt_100ms": 0.4975124378109453,
+      "pct_rtt_gt_500ms": 0.0,
+      "pct_rtt_gt_1000ms": 0.0,
+      "udp_receiver_mbps": null,
+      "udp_loss_percent": null,
+      "udp_jitter_ms": null,
+      "rsrp_median": -103.0,
+      "rsrq_median": -10.0,
+      "sinr_median": 7.0,
+      "cqi_median": 11.0,
+      "ri_median": 2.0
+    },
+    "lte2": {
+      "path": "lte2",
+      "telemetry_sample_count": 41,
+      "radio_states": [
+        {
+          "primary_band": "B3",
+          "sample_count": 41,
+          "approx_dwell_s": 41
+        }
+      ],
+      "ca_bands_seen": [],
+      "pct_rtt_gt_100ms": 0.0,
+      "pct_rtt_gt_500ms": 0.0,
+      "pct_rtt_gt_1000ms": 0.0,
+      "udp_receiver_mbps": 0.997515340375023,
+      "udp_loss_percent": 0,
+      "udp_jitter_ms": 0.628638133287581,
+      "rsrp_median": -93.0,
+      "rsrq_median": -11.5,
+      "sinr_median": 7.0,
+      "cqi_median": 13.0,
+      "ri_median": 1.0
+    }
+  }
+}
