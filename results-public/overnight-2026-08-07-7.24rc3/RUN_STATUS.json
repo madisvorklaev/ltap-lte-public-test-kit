@@ -1,8 +1,8 @@
 {
-  "state": "smoke",
+  "state": "aborted",
   "matrix_version": "0.1.0",
   "git_commit": "04027562fe74ab26a474d4ba8928990e4282683e",
-  "updated_utc": "2026-08-07T20:47:03.794+00:00",
+  "updated_utc": "2026-08-07T20:47:06.716+00:00",
   "original_band_settings": {
     "lte1": "",
     "lte2": ""
@@ -13,5 +13,5 @@
   "last_status": "FAIL_DUAL",
   "final_registration_ok": true,
   "current_configuration": null,
-  "abort_reason": "stopped after smoke gate logic bug allowed failed smoke to start R1-M0"
+  "abort_reason": "smoke gate failed: FAIL_DUAL"
 }
