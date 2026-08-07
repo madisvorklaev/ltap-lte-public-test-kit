@@ -103,6 +103,7 @@ def main() -> int:
     ap.add_argument("--duration", type=int, default=300)
     ap.add_argument("--preload", type=int, default=10)
     ap.add_argument("--postload", type=int, default=10)
+    ap.add_argument("--post-probe-wait", type=float, default=8.0)
     ap.add_argument("--telemetry-interval", type=float, default=1.0)
     ap.add_argument("--ping-interval", type=float, default=0.2)
     ap.add_argument("--require-pass", action="store_true")
@@ -122,6 +123,8 @@ def main() -> int:
     campaign2, port2, probe2 = choose(Path(args.campaign_lte2), lte2["source_ip"])
     if campaign1["server_ipv4"] != campaign2["server_ipv4"]:
         raise SystemExit("Dual campaigns must use the same pinned server IPv4")
+    if args.post_probe_wait > 0:
+        time.sleep(args.post_probe_wait)
 
     stamp = dt.datetime.now().astimezone().strftime("%Y%m%d-%H%M%S")
     out_dir = Path(args.output) / f"{stamp}_{base.slug(args.group_id)}"
