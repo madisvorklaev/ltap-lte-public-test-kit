@@ -1,0 +1,27 @@
+{
+  "timestamp_utc": "2026-08-13T18:44:59.465+00:00",
+  "interfaces": [
+    "lte1",
+    "lte2"
+  ],
+  "resource": {
+    "rc": 0,
+    "stdout": "                   uptime: 13h33m11s          \n                  version: 7.24rc3 (testing)  \n               build-time: 2026-07-28 13:55:55\n          minimum-version: 7.11               \n              free-memory: 69.9MiB            \n             total-memory: 128.0MiB           \n                      cpu: MIPS 1004Kc V2.15  \n                cpu-count: 4                  \n            cpu-frequency: 880MHz             \n                 cpu-load: 3%                 \n           free-hdd-space: 3620.0KiB          \n          total-hdd-space: 16.0MiB            \n  write-sect-since-reboot: 3861               \n         write-sect-total: 160353             \n        architecture-name: mmips              \n               board-name: LtAP-2HnD          \n                 platform: MikroTik           \n\n",
+    "stderr": ""
+  },
+  "routerboard": {
+    "rc": 0,
+    "stdout": "       routerboard: yes        \n             model: LtAP-2HnD  \n          revision: r2         \n     serial-number: REDACTED
+    "stderr": ""
+  },
+  "identity": {
+    "rc": 0,
+    "stdout": "  name: R0000001\n\n",
+    "stderr": ""
+  },
+  "lte_config": {
+    "rc": 0,
+    "stdout": "Flags: R - RUNNING\n0 R default-name=\"lte1\" name=\"lte1\" mtu=1500 apn-profiles=ELMO-LTE1\n    allow-roaming=no sms-read=no sms-protocol=auto network-mode=lte band=\"\"\n \n1 R default-name=\"lte2\" name=\"lte2\" mtu=1500 apn-profiles=ELMO-LTE2\n    allow-roaming=no sms-read=no sms-protocol=auto network-mode=lte band=\"\"\n\n",
+    "stderr": ""
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "schema": "elmo-exp2b-stationary-v1",
+  "collector_version": "0.5.0-exp2b",
+  "runner_version": "0.1.0",
+  "git_commit": "3b38c8d3b896717834f15de9c3ae9c429f8a6ffa",
+  "campaign_dir": "results/exp2b-stationary-20260813-scaleway",
+  "condition": "A",
+  "created_local": "2026-08-13T22:46:37+03:00",
+  "server": {
+    "hostname": "ping-ams1.online.net",
+    "ipv4": "163.172.208.7",
+    "lte1_ports": [
+      5208
+    ],
+    "lte2_ports": [
+      5201
+    ]
+  },
+  "fixed_cap": "5M for B/C only",
+  "test_rates": {
+    "single": "6M",
+    "dual_main": "6M per path",
+    "dual_control": "5M per path"
+  },
+  "durations": {
+    "single_s": 120,
+    "dual_main_s": 300,
+    "dual_control_s": 300
+  },
+  "router_metadata": {
+    "timestamp_utc": "2026-08-13T19:46:37.168+00:00",
+    "interfaces": [
+      "lte1",
+      "lte2"
+    ],
+    "resource": {
+      "rc": 0,
+      "stdout": "                   uptime: 14h34m49s          \n                  version: 7.24rc3 (testing)  \n               build-time: 2026-07-28 13:55:55\n          minimum-version: 7.11               \n              free-memory: 69.4MiB            \n             total-memory: 128.0MiB           \n                      cpu: MIPS 1004Kc V2.15  \n                cpu-count: 4                  \n            cpu-frequency: 880MHz             \n                 cpu-load: 3%                 \n           free-hdd-space: 3612.0KiB          \n          total-hdd-space: 16.0MiB            \n  write-sect-since-reboot: 4174               \n         write-sect-total: 160666             \n        architecture-name: mmips              \n               board-name: LtAP-2HnD          \n                 platform: MikroTik           \n\n",
+      "stderr": ""
+    },
+    "routerboard": {
+      "rc": 0,
+      "stdout": "       routerboard: yes        \n             model: LtAP-2HnD  \n          revision: r2         \n     serial-number: REDACTED
+      "stderr": ""
+    },
+    "identity": {
+      "rc": 0,
+      "stdout": "  name: R0000001\n\n",
+      "stderr": ""
+    },
+    "lte_config": {
+      "rc": 0,
+      "stdout": "Flags: R - RUNNING\n0 R default-name=\"lte1\" name=\"lte1\" mtu=1500 apn-profiles=ELMO-LTE1\n    allow-roaming=no sms-read=no sms-protocol=auto network-mode=lte band=\"\"\n \n1 R default-name=\"lte2\" name=\"lte2\" mtu=1500 apn-profiles=ELMO-LTE2\n    allow-roaming=no sms-read=no sms-protocol=auto network-mode=lte band=\"\"\n\n",
+      "stderr": ""
+    }
+  },
+  "exp2b_condition_check": {
+    "condition": "A",
+    "checked_utc": "2026-08-13T19:46:37.646+00:00",
+    "queue_types_pfifo": {
+      "rc": 0,
+      "stdout": "\n",
+      "stderr": ""
+    },
+    "queue_types_cake": {
+      "rc": 0,
+      "stdout": "\n",
+      "stderr": ""
+    },
+    "queue_lte1": {
+      "rc": 0,
+      "stdout": "\n",
+      "stderr": ""
+    },
+    "queue_lte2": {
+      "rc": 0,
+      "stdout": "\n",
+      "stderr": ""
+    },
+    "mangle_exp2b": {
+      "rc": 0,
+      "stdout": "\n",
+      "stderr": ""
+    },
+    "mangle_source_lte1": {
+      "rc": 0,
+      "stdout": "Columns: CHAIN, ACTION, BYTES, PACKETS\n# CHAIN       ACTION                BYTES  PACKETS\n;;; ELMO TEST: source via lte1\n0 prerouting  mark-routing  1 126 013 113  919 304\n\n",
+      "stderr": ""
+    },
+    "mangle_source_lte2": {
+      "rc": 0,
+      "stdout": "Columns: CHAIN, ACTION, BYTES, PACKETS\n# CHAIN       ACTION              BYTES  PACKETS\n;;; ELMO TEST: source via lte2\n1 prerouting  mark-routing  965 442 488  771 915\n\n",
+      "stderr": ""
+    },
+    "queue_lte1_parsed": {},
+    "queue_lte2_parsed": {},
+    "status": "PASS",
+    "problems": []
+  },
+  "physical_notes": "Stationary lab. Antenna/router position must not be moved during A/B/C."
+}
