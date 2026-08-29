@@ -1,0 +1,47 @@
+{
+  "updated_local": "2026-08-13T21:42:06+03:00",
+  "latest_condition": "A",
+  "decision": "BASELINE_COMPLETE_PENDING_MANUAL_GATE. Review comparison_runs.csv and per-run summaries before importing the 5M PFIFO shaper.",
+  "runs": [
+    {
+      "condition": "A",
+      "repeat": 1,
+      "kind": "single",
+      "path": "lte1",
+      "bitrate": "6M",
+      "duration_s": 15,
+      "rc": 0,
+      "run_dir": "results/exp2b-stationary-20260813-smoke2/runs/summary.csv"
+    },
+    {
+      "condition": "A",
+      "repeat": 1,
+      "kind": "single",
+      "path": "lte2",
+      "bitrate": "6M",
+      "duration_s": 15,
+      "rc": 0,
+      "run_dir": "results/exp2b-stationary-20260813-smoke2/runs/20260813-213944_exp2b_A_lte2_6M_r1_lte2_udp_upload"
+    },
+    {
+      "condition": "A",
+      "repeat": 1,
+      "kind": "dual",
+      "path": "lte1+lte2",
+      "bitrate": "6M",
+      "duration_s": 20,
+      "rc": 0,
+      "run_dir": "results/exp2b-stationary-20260813-smoke2/runs/20260813-214028_exp2b_A_dual_6M_r1"
+    },
+    {
+      "condition": "A",
+      "repeat": 1,
+      "kind": "dual",
+      "path": "lte1+lte2",
+      "bitrate": "5M",
+      "duration_s": 20,
+      "rc": 0,
+      "run_dir": "results/exp2b-stationary-20260813-smoke2/runs/20260813-214123_exp2b_A_dual_5M_r1"
+    }
+  ]
+}

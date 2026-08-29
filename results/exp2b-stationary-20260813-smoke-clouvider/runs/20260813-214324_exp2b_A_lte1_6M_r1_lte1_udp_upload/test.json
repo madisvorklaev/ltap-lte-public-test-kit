@@ -1,0 +1,39 @@
+{
+  "collector_version": "0.5.0-exp2b",
+  "created_local": "2026-08-13T21:43:24+03:00",
+  "created_utc": "2026-08-13T18:43:24.197+00:00",
+  "tag": "exp2b_A_lte1_6M_r1",
+  "path": "lte1",
+  "lte_interface": "lte1",
+  "source_ip": "192.168.101.201",
+  "linux_interface": "eno1",
+  "server_hostname": "ams.speedtest.clouvider.net",
+  "server_ipv4": "194.127.172.176",
+  "server_port": 5203,
+  "port_probe": {
+    "attempts": [
+      {
+        "port": 5203,
+        "rc": 0,
+        "stderr": "",
+        "iperf_error": null,
+        "bps": 2973729.0883371
+      }
+    ]
+  },
+  "protocol": "udp",
+  "direction": "upload",
+  "duration_s": 15,
+  "warmup_s": 5,
+  "cooldown_s": 10,
+  "target_bitrate": "6M",
+  "packet_length": 1200,
+  "routing_mode": "source_ip_lab_mode",
+  "routing_table": "to-lte1",
+  "source_rule_comment": "ELMO TEST: source via lte1",
+  "exp2b_condition": "A",
+  "exp2b_queue_names": [
+    "ELMO-EXP2B-LTE1",
+    "ELMO-EXP2B-LTE2"
+  ]
+}

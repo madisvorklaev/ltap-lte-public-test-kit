@@ -1,0 +1,17 @@
+{
+  "updated_local": "2026-08-13T21:44:03+03:00",
+  "latest_condition": "A",
+  "decision": "STOPPED_INVALID_RUN",
+  "runs": [
+    {
+      "condition": "A",
+      "repeat": 1,
+      "kind": "single",
+      "path": "lte1",
+      "bitrate": "6M",
+      "duration_s": 15,
+      "rc": 3,
+      "run_dir": "results/exp2b-stationary-20260813-smoke-clouvider/runs/summary.csv"
+    }
+  ]
+}

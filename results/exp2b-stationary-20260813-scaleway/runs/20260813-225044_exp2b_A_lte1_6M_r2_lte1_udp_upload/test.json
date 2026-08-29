@@ -1,0 +1,39 @@
+{
+  "collector_version": "0.5.0-exp2b",
+  "created_local": "2026-08-13T22:50:44+03:00",
+  "created_utc": "2026-08-13T19:50:44.103+00:00",
+  "tag": "exp2b_A_lte1_6M_r2",
+  "path": "lte1",
+  "lte_interface": "lte1",
+  "source_ip": "192.168.101.201",
+  "linux_interface": "eno1",
+  "server_hostname": "ping-ams1.online.net",
+  "server_ipv4": "163.172.208.7",
+  "server_port": 5208,
+  "port_probe": {
+    "attempts": [
+      {
+        "port": 5208,
+        "rc": 0,
+        "stderr": "",
+        "iperf_error": null,
+        "bps": 16512661.234625073
+      }
+    ]
+  },
+  "protocol": "udp",
+  "direction": "upload",
+  "duration_s": 120,
+  "warmup_s": 5,
+  "cooldown_s": 10,
+  "target_bitrate": "6M",
+  "packet_length": 1200,
+  "routing_mode": "source_ip_lab_mode",
+  "routing_table": "to-lte1",
+  "source_rule_comment": "ELMO TEST: source via lte1",
+  "exp2b_condition": "A",
+  "exp2b_queue_names": [
+    "ELMO-EXP2B-LTE1",
+    "ELMO-EXP2B-LTE2"
+  ]
+}

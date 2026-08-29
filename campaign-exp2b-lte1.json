@@ -1,0 +1,12 @@
+{
+  "created_local": "2026-08-13T21:45:00+03:00",
+  "server_hostname": "ping-ams1.online.net",
+  "server_ipv4": "163.172.208.7",
+  "all_resolved_ipv4": [
+    "163.172.208.7"
+  ],
+  "ports": [
+    5208
+  ],
+  "note": "Experiment 2b pinned public server/IP for LTE1. Do not silently change it mid-campaign."
+}

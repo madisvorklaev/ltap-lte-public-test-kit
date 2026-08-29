@@ -1,0 +1,12 @@
+{"timestamp_utc": "2026-08-13T18:52:49.731+00:00", "type": "sinr_low_started", "interface": "lte1", "sinr": 2.0, "threshold": 3.0}
+{"timestamp_utc": "2026-08-13T18:52:52.731+00:00", "type": "sinr_low_ended", "interface": "lte1", "sinr": 3.0, "threshold": 3.0}
+{"timestamp_utc": "2026-08-13T18:52:58.731+00:00", "type": "sinr_low_started", "interface": "lte1", "sinr": 1.0, "threshold": 3.0}
+{"timestamp_utc": "2026-08-13T18:53:01.731+00:00", "type": "sinr_low_ended", "interface": "lte1", "sinr": 3.0, "threshold": 3.0}
+{"timestamp_utc": "2026-08-13T18:53:13.731+00:00", "type": "sinr_low_started", "interface": "lte1", "sinr": 2.0, "threshold": 3.0}
+{"timestamp_utc": "2026-08-13T18:53:16.731+00:00", "type": "sinr_low_ended", "interface": "lte1", "sinr": 9.0, "threshold": 3.0}
+{"timestamp_utc": "2026-08-13T18:53:37.731+00:00", "type": "sinr_low_started", "interface": "lte1", "sinr": 2.0, "threshold": 3.0}
+{"timestamp_utc": "2026-08-13T18:53:41.731+00:00", "type": "sinr_low_ended", "interface": "lte1", "sinr": 4.0, "threshold": 3.0}
+{"timestamp_utc": "2026-08-13T18:54:08.731+00:00", "type": "sinr_low_started", "interface": "lte1", "sinr": 2.0, "threshold": 3.0}
+{"timestamp_utc": "2026-08-13T18:54:11.731+00:00", "type": "sinr_low_ended", "interface": "lte1", "sinr": 3.0, "threshold": 3.0}
+{"timestamp_utc": "2026-08-13T18:54:38.731+00:00", "type": "sinr_low_started", "interface": "lte1", "sinr": 2.0, "threshold": 3.0}
+{"timestamp_utc": "2026-08-13T18:54:41.731+00:00", "type": "sinr_low_ended", "interface": "lte1", "sinr": 3.0, "threshold": 3.0}

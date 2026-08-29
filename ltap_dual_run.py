@@ -18,7 +18,7 @@ from typing import Any
 
 import ltap_public_test as base
 
-VERSION = "0.1.0"
+VERSION = "0.2.0-exp2b"
 
 
 def save_json(path: Path, obj: Any) -> None:
@@ -106,6 +106,8 @@ def main() -> int:
     ap.add_argument("--post-probe-wait", type=float, default=8.0)
     ap.add_argument("--telemetry-interval", type=float, default=1.0)
     ap.add_argument("--ping-interval", type=float, default=0.2)
+    ap.add_argument("--exp2b-condition", choices=["A", "B", "C"], default="A")
+    ap.add_argument("--exp2b-queue-names", nargs="+", default=base.EXP2B_QUEUE_NAMES)
     ap.add_argument("--require-pass", action="store_true")
     args = ap.parse_args()
 
@@ -154,9 +156,19 @@ def main() -> int:
         "duration_s": args.duration,
         "preload_s": args.preload,
         "postload_s": args.postload,
+        "exp2b_condition": args.exp2b_condition,
+        "exp2b_queue_names": args.exp2b_queue_names,
     }
     save_json(out_dir / "test_group.json", meta)
     save_json(out_dir / "router_metadata.json", base.collect_router_metadata(router, all_lte))
+    condition_check = base.verify_exp2b_condition(router, args.exp2b_condition)
+    condition_status, condition_problems = base.exp2b_condition_status(condition_check)
+    condition_check["status"] = condition_status
+    condition_check["problems"] = condition_problems
+    save_json(out_dir / "exp2b_condition_check.json", condition_check)
+    if condition_status != "PASS":
+        router.close()
+        raise SystemExit("Exp2b condition verification failed: " + "; ".join(condition_problems))
 
     before = {name: base.mangle_rule_counters(router, comments[name]) for name in ("lte1", "lte2")}
 
@@ -164,7 +176,7 @@ def main() -> int:
     telemetry_path = out_dir / "telemetry.jsonl"
     telemetry = threading.Thread(
         target=base.telemetry_loop,
-        args=(router, all_lte, args.telemetry_interval, telemetry_path, stop),
+        args=(router, all_lte, args.telemetry_interval, telemetry_path, stop, args.exp2b_queue_names, True),
         daemon=True,
     )
     telemetry.start()
@@ -177,6 +189,7 @@ def main() -> int:
         "lte2": base.build_iperf(campaign2["server_ipv4"], port2, lte2["source_ip"], "udp", args.duration, args.bitrate, args.packet_length, False),
     }
     rc: dict[str, int] = {"lte1": 99, "lte2": 99}
+    timed_out: dict[str, bool] = {"lte1": False, "lte2": False}
     start_utc = ""
     end_utc = ""
     try:
@@ -191,8 +204,19 @@ def main() -> int:
             proc = subprocess.Popen(cmd, text=True, stdout=stdout, stderr=stderr)
             proc._ltap_files = (stdout, stderr)  # type: ignore[attr-defined]
             procs[name] = proc
+        deadline = time.monotonic() + args.duration + 30
         for name, proc in procs.items():
-            rc[name] = proc.wait()
+            try:
+                rc[name] = proc.wait(timeout=max(1, deadline - time.monotonic()))
+            except subprocess.TimeoutExpired:
+                timed_out[name] = True
+                proc.terminate()
+                try:
+                    proc.wait(timeout=5)
+                except subprocess.TimeoutExpired:
+                    proc.kill()
+                    proc.wait(timeout=5)
+                rc[name] = 124
             for f in getattr(proc, "_ltap_files", ()):
                 f.close()
         end_utc = base.now_utc()
@@ -217,6 +241,9 @@ def main() -> int:
         "lte1": base.summarize_iperf(load_iperf(out_dir / "lte1_iperf.json"), "udp", False),
         "lte2": base.summarize_iperf(load_iperf(out_dir / "lte2_iperf.json"), "udp", False),
     }
+    for name, did_timeout in timed_out.items():
+        if did_timeout:
+            iperf[name]["error"] = f"iperf3 timed out after {args.duration + 30}s"
     ping = {
         "lte1": base.parse_ping(out_dir / "lte1_ping.txt"),
         "lte2": base.parse_ping(out_dir / "lte2_ping.txt"),
@@ -231,11 +258,13 @@ def main() -> int:
         "start_utc": start_utc,
         "end_utc": end_utc,
         "iperf_exit_codes": rc,
+        "iperf_timeouts": timed_out,
         "iperf": iperf,
         "ping": ping,
         "radio": radio,
         "source_rule": {"before": before, "after": after},
         "path_verification": verification,
+        "exp2b_condition": condition_check,
         "group_status": group_status,
     }
     save_json(out_dir / "group_summary.json", summary)

@@ -1,0 +1,54 @@
+{
+  "dual_wrapper_version": "0.2.0-exp2b",
+  "collector_version": "0.5.0-exp2b",
+  "created_local": "2026-08-13T21:47:26+03:00",
+  "created_utc": "2026-08-13T18:47:26.898+00:00",
+  "group_id": "exp2b_A_dual_5M_r1",
+  "server_hostname": "ams.speedtest.clouvider.net",
+  "server_ipv4": "194.127.172.176",
+  "paths": {
+    "lte1": {
+      "source_ip": "192.168.101.201",
+      "lte_interface": "lte1",
+      "server_port": 5203,
+      "port_probe": {
+        "attempts": [
+          {
+            "port": 5203,
+            "rc": 0,
+            "stderr": "",
+            "iperf_error": null,
+            "bps": 8490952.25180034
+          }
+        ]
+      }
+    },
+    "lte2": {
+      "source_ip": "192.168.101.202",
+      "lte_interface": "lte2",
+      "server_port": 5204,
+      "port_probe": {
+        "attempts": [
+          {
+            "port": 5204,
+            "rc": 0,
+            "stderr": "",
+            "iperf_error": null,
+            "bps": 30859459.50057427
+          }
+        ]
+      }
+    }
+  },
+  "protocol": "udp",
+  "target_bitrate": "5M",
+  "packet_length": 1200,
+  "duration_s": 20,
+  "preload_s": 10,
+  "postload_s": 10,
+  "exp2b_condition": "A",
+  "exp2b_queue_names": [
+    "ELMO-EXP2B-LTE1",
+    "ELMO-EXP2B-LTE2"
+  ]
+}

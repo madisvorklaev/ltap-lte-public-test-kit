@@ -1,0 +1,277 @@
+{
+  "test": {
+    "dual_wrapper_version": "0.2.0-exp2b",
+    "collector_version": "0.5.0-exp2b",
+    "created_local": "2026-08-13T21:40:28+03:00",
+    "created_utc": "2026-08-13T18:40:28.719+00:00",
+    "group_id": "exp2b_A_dual_6M_r1",
+    "server_hostname": "iperf-ams-nl.eranium.net",
+    "server_ipv4": "217.18.95.142",
+    "paths": {
+      "lte1": {
+        "source_ip": "192.168.101.201",
+        "lte_interface": "lte1",
+        "server_port": 5201,
+        "port_probe": {
+          "attempts": [
+            {
+              "port": 5201,
+              "rc": 0,
+              "stderr": "",
+              "iperf_error": null,
+              "bps": 6868843.1009603245
+            }
+          ]
+        }
+      },
+      "lte2": {
+        "source_ip": "192.168.101.202",
+        "lte_interface": "lte2",
+        "server_port": 5204,
+        "port_probe": {
+          "attempts": [
+            {
+              "port": 5202,
+              "rc": 1,
+              "stderr": "",
+              "iperf_error": "the server is busy running a test. try again later"
+            },
+            {
+              "port": 5204,
+              "rc": 0,
+              "stderr": "",
+              "iperf_error": null,
+              "bps": 29855134.084489934
+            }
+          ]
+        }
+      }
+    },
+    "protocol": "udp",
+    "target_bitrate": "6M",
+    "packet_length": 1200,
+    "duration_s": 20,
+    "preload_s": 10,
+    "postload_s": 10,
+    "exp2b_condition": "A",
+    "exp2b_queue_names": [
+      "ELMO-EXP2B-LTE1",
+      "ELMO-EXP2B-LTE2"
+    ]
+  },
+  "start_utc": "2026-08-13T18:40:39.583+00:00",
+  "end_utc": "2026-08-13T18:41:00.001+00:00",
+  "iperf_exit_codes": {
+    "lte1": 1,
+    "lte2": 0
+  },
+  "iperf_timeouts": {
+    "lte1": false,
+    "lte2": false
+  },
+  "iperf": {
+    "lte1": {
+      "error": "unable to connect to server - server may have stopped running or use a different port, firewall issue, etc.: Connection timed out"
+    },
+    "lte2": {
+      "bits_per_second": 5982354.44732218,
+      "mbps": 5.982354447322179,
+      "jitter_ms": 2.0750866776355035,
+      "lost_packets": 0,
+      "packets": 12500,
+      "lost_percent": 0
+    }
+  },
+  "ping": {
+    "lte1": {
+      "sent": 200,
+      "received": 160,
+      "loss_percent": 20.0,
+      "min_ms": 15.679,
+      "avg_ms": 203.416,
+      "max_ms": 3925.308,
+      "mdev_ms": 705.444,
+      "p95_ms": 1846.0,
+      "sample_count": 160
+    },
+    "lte2": {
+      "sent": 202,
+      "received": 202,
+      "loss_percent": 0.0,
+      "min_ms": 16.465,
+      "avg_ms": 23.661,
+      "max_ms": 37.971,
+      "mdev_ms": 3.465,
+      "p95_ms": 29.8,
+      "sample_count": 202
+    }
+  },
+  "radio": {
+    "lte1": {
+      "rssi_median": -59.0,
+      "rssi_min": -71.0,
+      "rssi_max": -56.0,
+      "rsrp_median": -90.0,
+      "rsrp_min": -101.0,
+      "rsrp_max": -89.0,
+      "rsrq_median": -11.5,
+      "rsrq_min": -13.0,
+      "rsrq_max": -8.5,
+      "sinr_median": 9.0,
+      "sinr_min": 1.0,
+      "sinr_max": 18.0,
+      "cqi_median": 12.0,
+      "cqi_min": 0.0,
+      "cqi_max": 13.0,
+      "ri_median": 2.0,
+      "ri_min": 1.0,
+      "ri_max": 2.0,
+      "primary_bands_seen": [
+        "B38@20Mhz earfcn: 37900 phy-cellid: 3",
+        "B3@15Mhz earfcn: 1875 phy-cellid: 69",
+        "B7@20Mhz earfcn: 2850 phy-cellid: 69"
+      ],
+      "ca_bands_seen": [],
+      "ca_missing_samples": 41,
+      "samples": 41,
+      "statuses_seen": [
+        "registered"
+      ],
+      "cell_changes": 1,
+      "tx-byte_delta": 19828,
+      "rx-byte_delta": 15558,
+      "tx-packet_delta": 204,
+      "rx-packet_delta": 159,
+      "tx-queue-drop_delta": 0
+    },
+    "lte2": {
+      "rssi_median": -70.0,
+      "rssi_min": -70.0,
+      "rssi_max": -63.0,
+      "rsrp_median": -101.0,
+      "rsrp_min": -101.0,
+      "rsrp_max": -94.0,
+      "rsrq_median": -10.0,
+      "rsrq_min": -10.5,
+      "rsrq_max": -10.0,
+      "sinr_median": 7.0,
+      "sinr_min": -1.0,
+      "sinr_max": 12.0,
+      "cqi_median": 0.0,
+      "cqi_min": 0.0,
+      "cqi_max": 0.0,
+      "ri_median": null,
+      "ri_min": null,
+      "ri_max": null,
+      "primary_bands_seen": [
+        "B3@20Mhz earfcn: 1344 phy-cellid: 66"
+      ],
+      "ca_bands_seen": [
+        "B7@20Mhz earfcn: 3050 phy-cellid: 156"
+      ],
+      "ca_missing_samples": 0,
+      "samples": 41,
+      "statuses_seen": [
+        "registered"
+      ],
+      "cell_changes": 0,
+      "tx-byte_delta": 15546475,
+      "rx-byte_delta": 20927,
+      "tx-packet_delta": 12720,
+      "rx-packet_delta": 215,
+      "tx-queue-drop_delta": 0
+    }
+  },
+  "source_rule": {
+    "before": {
+      "lte1": {
+        "comment": "ELMO TEST: source via lte1",
+        "rc": 0,
+        "raw": "16400353\n12679\n",
+        "bytes": 16400353,
+        "packets": 12679
+      },
+      "lte2": {
+        "comment": "ELMO TEST: source via lte2",
+        "rc": 0,
+        "raw": "21715872\n12427\n",
+        "bytes": 21715872,
+        "packets": 12427
+      }
+    },
+    "after": {
+      "lte1": {
+        "comment": "ELMO TEST: source via lte1",
+        "rc": 0,
+        "raw": "16417493\n12885\n",
+        "bytes": 16417493,
+        "packets": 12885
+      },
+      "lte2": {
+        "comment": "ELMO TEST: source via lte2",
+        "rc": 0,
+        "raw": "37084435\n25149\n",
+        "bytes": 37084435,
+        "packets": 25149
+      }
+    }
+  },
+  "path_verification": {
+    "lte1": {
+      "status": "FAIL_LTE1_SOURCE_RULE",
+      "source_rule_bytes_delta": 17140,
+      "source_rule_packets_delta": 206,
+      "lte_tx_bytes_delta": 19828
+    },
+    "lte2": {
+      "status": "PASS_DUAL",
+      "source_rule_bytes_delta": 15368563,
+      "source_rule_packets_delta": 12722,
+      "lte_tx_bytes_delta": 15546475
+    }
+  },
+  "exp2b_condition": {
+    "condition": "A",
+    "checked_utc": "2026-08-13T18:40:29.220+00:00",
+    "queue_types_pfifo": {
+      "rc": 0,
+      "stdout": "\n",
+      "stderr": ""
+    },
+    "queue_types_cake": {
+      "rc": 0,
+      "stdout": "\n",
+      "stderr": ""
+    },
+    "queue_lte1": {
+      "rc": 0,
+      "stdout": "\n",
+      "stderr": ""
+    },
+    "queue_lte2": {
+      "rc": 0,
+      "stdout": "\n",
+      "stderr": ""
+    },
+    "mangle_exp2b": {
+      "rc": 0,
+      "stdout": "\n",
+      "stderr": ""
+    },
+    "mangle_source_lte1": {
+      "rc": 0,
+      "stdout": "Columns: CHAIN, ACTION, BYTES, PACKETS\n# CHAIN       ACTION             BYTES  PACKETS\n;;; ELMO TEST: source via lte1\n0 prerouting  mark-routing  16 400 353   12 679\n\n",
+      "stderr": ""
+    },
+    "mangle_source_lte2": {
+      "rc": 0,
+      "stdout": "Columns: CHAIN, ACTION, BYTES, PACKETS\n# CHAIN       ACTION             BYTES  PACKETS\n;;; ELMO TEST: source via lte2\n1 prerouting  mark-routing  21 715 872   12 427\n\n",
+      "stderr": ""
+    },
+    "queue_lte1_parsed": {},
+    "queue_lte2_parsed": {},
+    "status": "PASS",
+    "problems": []
+  },
+  "group_status": "FAIL_DUAL"
+}

@@ -1,0 +1,16 @@
+{"timestamp_utc": "2026-08-13T19:48:03.445+00:00", "type": "sinr_low_started", "interface": "lte1", "sinr": 2.0, "threshold": 3.0}
+{"timestamp_utc": "2026-08-13T19:48:06.445+00:00", "type": "sinr_low_ended", "interface": "lte1", "sinr": 6.0, "threshold": 3.0}
+{"timestamp_utc": "2026-08-13T19:48:15.445+00:00", "type": "sinr_low_started", "interface": "lte1", "sinr": 2.0, "threshold": 3.0}
+{"timestamp_utc": "2026-08-13T19:48:24.445+00:00", "type": "sinr_low_ended", "interface": "lte1", "sinr": 9.0, "threshold": 3.0}
+{"timestamp_utc": "2026-08-13T19:48:34.445+00:00", "type": "sinr_low_started", "interface": "lte1", "sinr": 1.0, "threshold": 3.0}
+{"timestamp_utc": "2026-08-13T19:48:37.445+00:00", "type": "sinr_low_ended", "interface": "lte1", "sinr": 4.0, "threshold": 3.0}
+{"timestamp_utc": "2026-08-13T19:48:46.445+00:00", "type": "sinr_low_started", "interface": "lte1", "sinr": 2.0, "threshold": 3.0}
+{"timestamp_utc": "2026-08-13T19:48:52.445+00:00", "type": "sinr_low_ended", "interface": "lte1", "sinr": 8.0, "threshold": 3.0}
+{"timestamp_utc": "2026-08-13T19:48:55.445+00:00", "type": "cell_changed", "interface": "lte1", "old": "257028669", "new": "257028629"}
+{"timestamp_utc": "2026-08-13T19:48:58.445+00:00", "type": "primary_band_changed", "interface": "lte1", "old": "B1@15Mhz earfcn: 523 phy-cellid: 69", "new": "B3@15Mhz earfcn: 1875 phy-cellid: 69"}
+{"timestamp_utc": "2026-08-13T19:49:01.445+00:00", "type": "sinr_low_started", "interface": "lte1", "sinr": 0.0, "threshold": 3.0}
+{"timestamp_utc": "2026-08-13T19:49:13.445+00:00", "type": "sinr_low_ended", "interface": "lte1", "sinr": 3.0, "threshold": 3.0}
+{"timestamp_utc": "2026-08-13T19:49:16.445+00:00", "type": "sinr_low_started", "interface": "lte1", "sinr": 2.0, "threshold": 3.0}
+{"timestamp_utc": "2026-08-13T19:49:28.445+00:00", "type": "sinr_low_ended", "interface": "lte1", "sinr": 3.0, "threshold": 3.0}
+{"timestamp_utc": "2026-08-13T19:49:31.445+00:00", "type": "sinr_low_started", "interface": "lte1", "sinr": 1.0, "threshold": 3.0}
+{"timestamp_utc": "2026-08-13T19:49:55.445+00:00", "type": "cell_changed", "interface": "lte1", "old": "257028629", "new": "257028669"}

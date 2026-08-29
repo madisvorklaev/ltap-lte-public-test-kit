@@ -1,0 +1,2 @@
+{"timestamp_utc": "2026-08-13T19:57:11.989+00:00", "type": "sinr_low_started", "interface": "lte2", "sinr": 1.0, "threshold": 3.0}
+{"timestamp_utc": "2026-08-13T19:57:14.989+00:00", "type": "sinr_low_ended", "interface": "lte2", "sinr": 7.0, "threshold": 3.0}

@@ -1,0 +1,4 @@
+condition,repeat,kind,path,bitrate,duration_s,rc,run_dir
+A,1,single,lte1,6M,120,0,results/exp2b-stationary-20260813-level66/runs/20260813-223517_exp2b_A_lte1_6M_r1_lte1_udp_upload
+A,2,single,lte1,6M,120,0,results/exp2b-stationary-20260813-level66/runs/20260813-223827_exp2b_A_lte1_6M_r2_lte1_udp_upload
+A,3,single,lte1,6M,120,1,

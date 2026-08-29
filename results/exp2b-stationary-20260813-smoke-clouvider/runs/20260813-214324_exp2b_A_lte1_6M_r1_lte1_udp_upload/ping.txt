@@ -1,0 +1,263 @@
+PING 1.1.1.1 (1.1.1.1) from 192.168.101.201 : 56(84) bytes of data.
+[1786646604.676986] 64 bytes from 1.1.1.1: icmp_seq=1 ttl=58 time=26.7 ms
+[1786646604.876874] 64 bytes from 1.1.1.1: icmp_seq=2 ttl=58 time=25.5 ms
+[1786646605.077844] 64 bytes from 1.1.1.1: icmp_seq=3 ttl=58 time=25.5 ms
+[1786646605.325979] 64 bytes from 1.1.1.1: icmp_seq=4 ttl=58 time=72.7 ms
+[1786646605.486940] 64 bytes from 1.1.1.1: icmp_seq=5 ttl=58 time=32.5 ms
+[1786646605.694905] 64 bytes from 1.1.1.1: icmp_seq=6 ttl=58 time=39.6 ms
+[1786646605.887878] 64 bytes from 1.1.1.1: icmp_seq=7 ttl=58 time=31.6 ms
+[1786646606.098040] 64 bytes from 1.1.1.1: icmp_seq=8 ttl=58 time=40.7 ms
+[1786646606.287960] 64 bytes from 1.1.1.1: icmp_seq=9 ttl=58 time=29.5 ms
+[1786646606.486932] 64 bytes from 1.1.1.1: icmp_seq=10 ttl=58 time=27.5 ms
+[1786646606.686879] 64 bytes from 1.1.1.1: icmp_seq=11 ttl=58 time=26.6 ms
+[1786646606.886956] 64 bytes from 1.1.1.1: icmp_seq=12 ttl=58 time=25.7 ms
+[1786646607.086951] 64 bytes from 1.1.1.1: icmp_seq=13 ttl=58 time=24.6 ms
+[1786646607.289127] 64 bytes from 1.1.1.1: icmp_seq=14 ttl=58 time=25.7 ms
+[1786646607.487907] 64 bytes from 1.1.1.1: icmp_seq=15 ttl=58 time=23.3 ms
+[1786646607.690059] 64 bytes from 1.1.1.1: icmp_seq=16 ttl=58 time=24.8 ms
+[1786646607.898982] 64 bytes from 1.1.1.1: icmp_seq=17 ttl=58 time=32.6 ms
+[1786646608.096956] 64 bytes from 1.1.1.1: icmp_seq=18 ttl=58 time=29.5 ms
+[1786646608.297039] 64 bytes from 1.1.1.1: icmp_seq=19 ttl=58 time=28.6 ms
+[1786646608.497011] 64 bytes from 1.1.1.1: icmp_seq=20 ttl=58 time=27.5 ms
+[1786646608.696994] 64 bytes from 1.1.1.1: icmp_seq=21 ttl=58 time=26.6 ms
+[1786646608.896998] 64 bytes from 1.1.1.1: icmp_seq=22 ttl=58 time=25.6 ms
+[1786646609.107998] 64 bytes from 1.1.1.1: icmp_seq=23 ttl=58 time=35.5 ms
+[1786646609.297115] 64 bytes from 1.1.1.1: icmp_seq=24 ttl=58 time=23.7 ms
+[1786646609.565999] 64 bytes from 1.1.1.1: icmp_seq=25 ttl=58 time=91.4 ms
+[1786646609.689004] 64 bytes from 1.1.1.1: icmp_seq=26 ttl=58 time=13.6 ms
+[1786646609.896880] 64 bytes from 1.1.1.1: icmp_seq=27 ttl=58 time=20.5 ms
+[1786646610.097851] 64 bytes from 1.1.1.1: icmp_seq=28 ttl=58 time=20.6 ms
+[1786646610.303966] 64 bytes from 1.1.1.1: icmp_seq=29 ttl=58 time=25.8 ms
+[1786646610.499885] 64 bytes from 1.1.1.1: icmp_seq=30 ttl=58 time=20.7 ms
+[1786646610.705003] 64 bytes from 1.1.1.1: icmp_seq=31 ttl=58 time=24.8 ms
+[1786646610.906823] 64 bytes from 1.1.1.1: icmp_seq=32 ttl=58 time=25.5 ms
+[1786646611.106803] 64 bytes from 1.1.1.1: icmp_seq=33 ttl=58 time=24.7 ms
+[1786646611.305831] 64 bytes from 1.1.1.1: icmp_seq=34 ttl=58 time=22.7 ms
+[1786646611.506024] 64 bytes from 1.1.1.1: icmp_seq=35 ttl=58 time=21.9 ms
+[1786646611.708017] 64 bytes from 1.1.1.1: icmp_seq=36 ttl=58 time=22.7 ms
+[1786646611.907943] 64 bytes from 1.1.1.1: icmp_seq=37 ttl=58 time=21.6 ms
+[1786646612.115043] 64 bytes from 1.1.1.1: icmp_seq=38 ttl=58 time=27.8 ms
+[1786646612.315044] 64 bytes from 1.1.1.1: icmp_seq=39 ttl=58 time=26.7 ms
+[1786646612.510979] 64 bytes from 1.1.1.1: icmp_seq=40 ttl=58 time=21.7 ms
+[1786646612.719016] 64 bytes from 1.1.1.1: icmp_seq=41 ttl=58 time=28.8 ms
+[1786646612.930030] 64 bytes from 1.1.1.1: icmp_seq=42 ttl=58 time=38.7 ms
+[1786646613.126985] 64 bytes from 1.1.1.1: icmp_seq=43 ttl=58 time=34.7 ms
+[1786646613.338006] 64 bytes from 1.1.1.1: icmp_seq=44 ttl=58 time=44.7 ms
+[1786646613.515997] 64 bytes from 1.1.1.1: icmp_seq=45 ttl=58 time=21.7 ms
+[1786646613.718080] 64 bytes from 1.1.1.1: icmp_seq=46 ttl=58 time=22.8 ms
+[1786646613.920065] 64 bytes from 1.1.1.1: icmp_seq=47 ttl=58 time=23.7 ms
+[1786646614.135042] 64 bytes from 1.1.1.1: icmp_seq=48 ttl=58 time=37.7 ms
+[1786646614.323027] 64 bytes from 1.1.1.1: icmp_seq=49 ttl=58 time=24.7 ms
+[1786646614.524064] 64 bytes from 1.1.1.1: icmp_seq=50 ttl=58 time=24.8 ms
+[1786646614.719090] 64 bytes from 1.1.1.1: icmp_seq=51 ttl=58 time=18.8 ms
+[1786646614.942022] 64 bytes from 1.1.1.1: icmp_seq=52 ttl=58 time=40.6 ms
+[1786646615.142129] 64 bytes from 1.1.1.1: icmp_seq=53 ttl=58 time=39.8 ms
+[1786646615.507420] no answer yet for icmp_seq=54
+[1786646615.633051] 64 bytes from 1.1.1.1: icmp_seq=54 ttl=58 time=330 ms
+[1786646615.708194] no answer yet for icmp_seq=55
+[1786646615.915415] no answer yet for icmp_seq=56
+[1786646616.123421] no answer yet for icmp_seq=57
+[1786646616.331420] no answer yet for icmp_seq=58
+[1786646616.488026] 64 bytes from 1.1.1.1: icmp_seq=55 ttl=58 time=981 ms
+[1786646616.532119] no answer yet for icmp_seq=59
+[1786646616.739420] no answer yet for icmp_seq=60
+[1786646616.947411] no answer yet for icmp_seq=61
+[1786646617.155409] no answer yet for icmp_seq=62
+[1786646617.250667] 64 bytes from 1.1.1.1: icmp_seq=56 ttl=58 time=1542 ms
+[1786646617.355814] no answer yet for icmp_seq=63
+[1786646617.563409] no answer yet for icmp_seq=64
+[1786646617.771421] no answer yet for icmp_seq=65
+[1786646617.883147] 64 bytes from 1.1.1.1: icmp_seq=57 ttl=58 time=1968 ms
+[1786646617.972300] no answer yet for icmp_seq=66
+[1786646618.179409] no answer yet for icmp_seq=67
+[1786646618.387409] no answer yet for icmp_seq=68
+[1786646618.553165] 64 bytes from 1.1.1.1: icmp_seq=58 ttl=58 time=2430 ms
+[1786646618.588263] no answer yet for icmp_seq=69
+[1786646618.795414] no answer yet for icmp_seq=70
+[1786646619.003413] no answer yet for icmp_seq=71
+[1786646619.150878] 64 bytes from 1.1.1.1: icmp_seq=59 ttl=58 time=2819 ms
+[1786646619.202979] no answer yet for icmp_seq=72
+[1786646619.403423] no answer yet for icmp_seq=73
+[1786646619.611400] no answer yet for icmp_seq=74
+[1786646619.738153] 64 bytes from 1.1.1.1: icmp_seq=60 ttl=58 time=3206 ms
+[1786646619.812285] no answer yet for icmp_seq=75
+[1786646620.019428] no answer yet for icmp_seq=76
+[1786646620.227420] no answer yet for icmp_seq=77
+[1786646620.435429] no answer yet for icmp_seq=78
+[1786646620.453264] 64 bytes from 1.1.1.1: icmp_seq=61 ttl=58 time=3714 ms
+[1786646620.636497] no answer yet for icmp_seq=79
+[1786646620.843424] no answer yet for icmp_seq=80
+[1786646621.051428] no answer yet for icmp_seq=81
+[1786646621.143278] 64 bytes from 1.1.1.1: icmp_seq=62 ttl=58 time=4196 ms
+[1786646621.252399] no answer yet for icmp_seq=82
+[1786646621.459410] no answer yet for icmp_seq=83
+[1786646621.638264] 64 bytes from 1.1.1.1: icmp_seq=63 ttl=58 time=4483 ms
+[1786646621.660361] no answer yet for icmp_seq=84
+[1786646621.867412] no answer yet for icmp_seq=85
+[1786646621.938271] 64 bytes from 1.1.1.1: icmp_seq=64 ttl=58 time=4582 ms
+[1786646622.068408] no answer yet for icmp_seq=86
+[1786646622.133271] 64 bytes from 1.1.1.1: icmp_seq=65 ttl=58 time=4570 ms
+[1786646622.269407] no answer yet for icmp_seq=87
+[1786646622.353309] 64 bytes from 1.1.1.1: icmp_seq=66 ttl=58 time=4582 ms
+[1786646622.470410] no answer yet for icmp_seq=88
+[1786646622.528276] 64 bytes from 1.1.1.1: icmp_seq=67 ttl=58 time=4556 ms
+[1786646622.671410] no answer yet for icmp_seq=89
+[1786646622.728370] 64 bytes from 1.1.1.1: icmp_seq=68 ttl=58 time=4549 ms
+[1786646622.872571] no answer yet for icmp_seq=90
+[1786646622.893331] 64 bytes from 1.1.1.1: icmp_seq=69 ttl=58 time=4506 ms
+[1786646623.073412] no answer yet for icmp_seq=91
+[1786646623.100830] 64 bytes from 1.1.1.1: icmp_seq=70 ttl=58 time=4512 ms
+[1786646623.274049] no answer yet for icmp_seq=92
+[1786646623.283322] 64 bytes from 1.1.1.1: icmp_seq=71 ttl=58 time=4488 ms
+[1786646623.474552] no answer yet for icmp_seq=93
+[1786646623.490837] 64 bytes from 1.1.1.1: icmp_seq=72 ttl=58 time=4487 ms
+[1786646623.675065] no answer yet for icmp_seq=94
+[1786646623.683395] 64 bytes from 1.1.1.1: icmp_seq=73 ttl=58 time=4480 ms
+[1786646623.873419] 64 bytes from 1.1.1.1: icmp_seq=74 ttl=58 time=4470 ms
+[1786646623.883519] no answer yet for icmp_seq=95
+[1786646624.070894] 64 bytes from 1.1.1.1: icmp_seq=75 ttl=58 time=4459 ms
+[1786646624.082995] no answer yet for icmp_seq=96
+[1786646624.263403] 64 bytes from 1.1.1.1: icmp_seq=76 ttl=58 time=4451 ms
+[1786646624.283498] no answer yet for icmp_seq=97
+[1786646624.470934] 64 bytes from 1.1.1.1: icmp_seq=77 ttl=58 time=4451 ms
+[1786646624.484028] no answer yet for icmp_seq=98
+[1786646624.691444] no answer yet for icmp_seq=99
+[1786646624.899404] no answer yet for icmp_seq=100
+[1786646625.099238] no answer yet for icmp_seq=101
+[1786646625.299435] no answer yet for icmp_seq=102
+[1786646625.507452] no answer yet for icmp_seq=103
+[1786646625.715566] no answer yet for icmp_seq=104
+[1786646625.913847] 64 bytes from 1.1.1.1: icmp_seq=86 ttl=58 time=4046 ms
+[1786646625.923975] no answer yet for icmp_seq=105
+[1786646626.124426] no answer yet for icmp_seq=106
+[1786646626.314756] 64 bytes from 1.1.1.1: icmp_seq=88 ttl=58 time=4045 ms
+[1786646626.324899] no answer yet for icmp_seq=107
+[1786646626.531459] no answer yet for icmp_seq=108
+[1786646626.739431] no answer yet for icmp_seq=109
+[1786646626.947430] no answer yet for icmp_seq=110
+[1786646627.148317] no answer yet for icmp_seq=111
+[1786646627.355429] no answer yet for icmp_seq=112
+[1786646627.563469] no answer yet for icmp_seq=113
+[1786646627.771449] no answer yet for icmp_seq=114
+[1786646627.801477] 64 bytes from 1.1.1.1: icmp_seq=96 ttl=58 time=3918 ms
+[1786646627.971832] no answer yet for icmp_seq=115
+[1786646628.172589] no answer yet for icmp_seq=116
+[1786646628.379542] no answer yet for icmp_seq=117
+[1786646628.587516] no answer yet for icmp_seq=118
+[1786646628.703896] 64 bytes from 1.1.1.1: icmp_seq=99 ttl=58 time=4220 ms
+[1786646628.788101] no answer yet for icmp_seq=119
+[1786646628.995526] no answer yet for icmp_seq=120
+[1786646629.043964] 64 bytes from 1.1.1.1: icmp_seq=101 ttl=58 time=4144 ms
+[1786646629.053652] 64 bytes from 1.1.1.1: icmp_seq=102 ttl=58 time=3954 ms
+[1786646629.194889] no answer yet for icmp_seq=121
+[1786646629.198665] 64 bytes from 1.1.1.1: icmp_seq=103 ttl=58 time=3899 ms
+[1786646629.396004] no answer yet for icmp_seq=122
+[1786646629.529011] 64 bytes from 1.1.1.1: icmp_seq=105 ttl=58 time=3813 ms
+[1786646629.529080] 64 bytes from 1.1.1.1: icmp_seq=104 ttl=58 time=4021 ms
+[1786646629.596221] no answer yet for icmp_seq=123
+[1786646629.803536] no answer yet for icmp_seq=124
+[1786646629.883867] 64 bytes from 1.1.1.1: icmp_seq=106 ttl=58 time=3960 ms
+[1786646630.004171] no answer yet for icmp_seq=125
+[1786646630.083870] 64 bytes from 1.1.1.1: icmp_seq=107 ttl=58 time=3959 ms
+[1786646630.204127] no answer yet for icmp_seq=126
+[1786646630.211326] 64 bytes from 1.1.1.1: icmp_seq=108 ttl=58 time=3886 ms
+[1786646630.379013] 64 bytes from 1.1.1.1: icmp_seq=109 ttl=58 time=3847 ms
+[1786646630.405212] no answer yet for icmp_seq=127
+[1786646630.583896] 64 bytes from 1.1.1.1: icmp_seq=110 ttl=58 time=3844 ms
+[1786646630.606046] no answer yet for icmp_seq=128
+[1786646630.781422] 64 bytes from 1.1.1.1: icmp_seq=111 ttl=58 time=3834 ms
+[1786646630.806547] no answer yet for icmp_seq=129
+[1786646631.011464] no answer yet for icmp_seq=130
+[1786646631.031428] 64 bytes from 1.1.1.1: icmp_seq=112 ttl=58 time=3883 ms
+[1786646631.211650] no answer yet for icmp_seq=131
+[1786646631.251296] 64 bytes from 1.1.1.1: icmp_seq=113 ttl=58 time=3896 ms
+[1786646631.412616] no answer yet for icmp_seq=132
+[1786646631.443890] 64 bytes from 1.1.1.1: icmp_seq=114 ttl=58 time=3880 ms
+[1786646631.613248] no answer yet for icmp_seq=133
+[1786646631.633901] 64 bytes from 1.1.1.1: icmp_seq=115 ttl=58 time=3862 ms
+[1786646631.761600] 64 bytes from 1.1.1.1: icmp_seq=116 ttl=58 time=3790 ms
+[1786646631.813830] no answer yet for icmp_seq=134
+[1786646631.831352] 64 bytes from 1.1.1.1: icmp_seq=117 ttl=58 time=3659 ms
+[1786646631.903897] 64 bytes from 1.1.1.1: icmp_seq=118 ttl=58 time=3524 ms
+[1786646632.014187] no answer yet for icmp_seq=135
+[1786646632.094121] 64 bytes from 1.1.1.1: icmp_seq=119 ttl=58 time=3506 ms
+[1786646632.214425] no answer yet for icmp_seq=136
+[1786646632.321622] 64 bytes from 1.1.1.1: icmp_seq=120 ttl=58 time=3533 ms
+[1786646632.414834] no answer yet for icmp_seq=137
+[1786646632.534117] 64 bytes from 1.1.1.1: icmp_seq=121 ttl=58 time=3538 ms
+[1786646632.615382] no answer yet for icmp_seq=138
+[1786646632.773963] 64 bytes from 1.1.1.1: icmp_seq=122 ttl=58 time=3579 ms
+[1786646632.816128] no answer yet for icmp_seq=139
+[1786646632.991775] 64 bytes from 1.1.1.1: icmp_seq=123 ttl=58 time=3596 ms
+[1786646632.991846] 64 bytes from 1.1.1.1: icmp_seq=125 ttl=58 time=3188 ms
+[1786646632.991889] 64 bytes from 1.1.1.1: icmp_seq=124 ttl=58 time=3395 ms
+[1786646632.991902] 64 bytes from 1.1.1.1: icmp_seq=128 ttl=58 time=2586 ms
+[1786646632.991912] 64 bytes from 1.1.1.1: icmp_seq=126 ttl=58 time=2988 ms
+[1786646632.991922] 64 bytes from 1.1.1.1: icmp_seq=127 ttl=58 time=2788 ms
+[1786646632.991932] 64 bytes from 1.1.1.1: icmp_seq=129 ttl=58 time=2386 ms
+[1786646632.994009] 64 bytes from 1.1.1.1: icmp_seq=131 ttl=58 time=1982 ms
+[1786646632.994070] 64 bytes from 1.1.1.1: icmp_seq=130 ttl=58 time=2187 ms
+[1786646632.994085] 64 bytes from 1.1.1.1: icmp_seq=132 ttl=58 time=1782 ms
+[1786646632.994095] 64 bytes from 1.1.1.1: icmp_seq=133 ttl=58 time=1581 ms
+[1786646632.994105] 64 bytes from 1.1.1.1: icmp_seq=135 ttl=58 time=1180 ms
+[1786646632.994114] 64 bytes from 1.1.1.1: icmp_seq=134 ttl=58 time=1381 ms
+[1786646633.003983] 64 bytes from 1.1.1.1: icmp_seq=137 ttl=58 time=789 ms
+[1786646633.004046] 64 bytes from 1.1.1.1: icmp_seq=139 ttl=58 time=389 ms
+[1786646633.004058] 64 bytes from 1.1.1.1: icmp_seq=136 ttl=58 time=990 ms
+[1786646633.004068] 64 bytes from 1.1.1.1: icmp_seq=138 ttl=58 time=589 ms
+[1786646633.004078] 64 bytes from 1.1.1.1: icmp_seq=140 ttl=58 time=188 ms
+[1786646633.053943] 64 bytes from 1.1.1.1: icmp_seq=141 ttl=58 time=36.6 ms
+[1786646633.253881] 64 bytes from 1.1.1.1: icmp_seq=142 ttl=58 time=36.5 ms
+[1786646633.454033] 64 bytes from 1.1.1.1: icmp_seq=143 ttl=58 time=35.7 ms
+[1786646633.653911] 64 bytes from 1.1.1.1: icmp_seq=144 ttl=58 time=34.4 ms
+[1786646633.854015] 64 bytes from 1.1.1.1: icmp_seq=145 ttl=58 time=33.8 ms
+[1786646634.066597] 64 bytes from 1.1.1.1: icmp_seq=146 ttl=58 time=45.1 ms
+[1786646634.254026] 64 bytes from 1.1.1.1: icmp_seq=147 ttl=58 time=33.0 ms
+[1786646634.464049] 64 bytes from 1.1.1.1: icmp_seq=148 ttl=58 time=42.5 ms
+[1786646634.653945] 64 bytes from 1.1.1.1: icmp_seq=149 ttl=58 time=31.4 ms
+[1786646634.854004] 64 bytes from 1.1.1.1: icmp_seq=150 ttl=58 time=30.7 ms
+[1786646635.074349] 64 bytes from 1.1.1.1: icmp_seq=151 ttl=58 time=49.9 ms
+[1786646635.274168] 64 bytes from 1.1.1.1: icmp_seq=152 ttl=58 time=50.3 ms
+[1786646635.464095] 64 bytes from 1.1.1.1: icmp_seq=153 ttl=58 time=39.5 ms
+[1786646635.664148] 64 bytes from 1.1.1.1: icmp_seq=154 ttl=58 time=38.6 ms
+[1786646635.864220] 64 bytes from 1.1.1.1: icmp_seq=155 ttl=58 time=37.7 ms
+[1786646636.074130] 64 bytes from 1.1.1.1: icmp_seq=156 ttl=58 time=46.4 ms
+[1786646636.264159] 64 bytes from 1.1.1.1: icmp_seq=157 ttl=58 time=36.6 ms
+[1786646636.464113] 64 bytes from 1.1.1.1: icmp_seq=158 ttl=58 time=35.5 ms
+[1786646636.664431] 64 bytes from 1.1.1.1: icmp_seq=159 ttl=58 time=34.8 ms
+[1786646636.864167] 64 bytes from 1.1.1.1: icmp_seq=160 ttl=58 time=34.4 ms
+[1786646637.064094] 64 bytes from 1.1.1.1: icmp_seq=161 ttl=58 time=33.5 ms
+[1786646637.264143] 64 bytes from 1.1.1.1: icmp_seq=162 ttl=58 time=33.6 ms
+[1786646637.464143] 64 bytes from 1.1.1.1: icmp_seq=163 ttl=58 time=32.5 ms
+[1786646637.664319] 64 bytes from 1.1.1.1: icmp_seq=164 ttl=58 time=31.7 ms
+[1786646637.864251] 64 bytes from 1.1.1.1: icmp_seq=165 ttl=58 time=30.6 ms
+[1786646638.064211] 64 bytes from 1.1.1.1: icmp_seq=166 ttl=58 time=29.5 ms
+[1786646638.265127] 64 bytes from 1.1.1.1: icmp_seq=167 ttl=58 time=29.5 ms
+[1786646638.464222] 64 bytes from 1.1.1.1: icmp_seq=168 ttl=58 time=27.6 ms
+[1786646638.664274] 64 bytes from 1.1.1.1: icmp_seq=169 ttl=58 time=26.6 ms
+[1786646638.864202] 64 bytes from 1.1.1.1: icmp_seq=170 ttl=58 time=25.6 ms
+[1786646639.064170] 64 bytes from 1.1.1.1: icmp_seq=171 ttl=58 time=24.5 ms
+[1786646639.264171] 64 bytes from 1.1.1.1: icmp_seq=172 ttl=58 time=23.6 ms
+[1786646639.464069] 64 bytes from 1.1.1.1: icmp_seq=173 ttl=58 time=22.6 ms
+[1786646639.664244] 64 bytes from 1.1.1.1: icmp_seq=174 ttl=58 time=21.7 ms
+[1786646639.864229] 64 bytes from 1.1.1.1: icmp_seq=175 ttl=58 time=20.6 ms
+[1786646640.084176] 64 bytes from 1.1.1.1: icmp_seq=176 ttl=58 time=39.6 ms
+[1786646640.284235] 64 bytes from 1.1.1.1: icmp_seq=177 ttl=58 time=38.7 ms
+[1786646640.484238] 64 bytes from 1.1.1.1: icmp_seq=178 ttl=58 time=37.6 ms
+[1786646640.684279] 64 bytes from 1.1.1.1: icmp_seq=179 ttl=58 time=36.7 ms
+[1786646640.911442] 64 bytes from 1.1.1.1: icmp_seq=180 ttl=58 time=62.8 ms
+[1786646641.084967] 64 bytes from 1.1.1.1: icmp_seq=181 ttl=58 time=35.1 ms
+[1786646641.284441] 64 bytes from 1.1.1.1: icmp_seq=182 ttl=58 time=34.1 ms
+[1786646641.484545] 64 bytes from 1.1.1.1: icmp_seq=183 ttl=58 time=33.7 ms
+[1786646641.684447] 64 bytes from 1.1.1.1: icmp_seq=184 ttl=58 time=32.5 ms
+[1786646641.894380] 64 bytes from 1.1.1.1: icmp_seq=185 ttl=58 time=41.5 ms
+[1786646642.084339] 64 bytes from 1.1.1.1: icmp_seq=186 ttl=58 time=30.5 ms
+[1786646642.284467] 64 bytes from 1.1.1.1: icmp_seq=187 ttl=58 time=29.7 ms
+[1786646642.484357] 64 bytes from 1.1.1.1: icmp_seq=188 ttl=58 time=28.4 ms
+[1786646642.684379] 64 bytes from 1.1.1.1: icmp_seq=189 ttl=58 time=27.6 ms
+[1786646642.884372] 64 bytes from 1.1.1.1: icmp_seq=190 ttl=58 time=26.6 ms
+[1786646643.084307] 64 bytes from 1.1.1.1: icmp_seq=191 ttl=58 time=25.5 ms
+
+--- 1.1.1.1 ping statistics ---
+191 packets transmitted, 172 received, 9.94764% packet loss, time 38407ms
+rtt min/avg/max/mdev = 13.612/1314.675/4582.384/1771.865 ms, pipe 23

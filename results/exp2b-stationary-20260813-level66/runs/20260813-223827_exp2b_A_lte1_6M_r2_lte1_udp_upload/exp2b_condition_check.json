@@ -1,0 +1,43 @@
+{
+  "condition": "A",
+  "checked_utc": "2026-08-13T19:38:27.911+00:00",
+  "queue_types_pfifo": {
+    "rc": 0,
+    "stdout": "\n",
+    "stderr": ""
+  },
+  "queue_types_cake": {
+    "rc": 0,
+    "stdout": "\n",
+    "stderr": ""
+  },
+  "queue_lte1": {
+    "rc": 0,
+    "stdout": "\n",
+    "stderr": ""
+  },
+  "queue_lte2": {
+    "rc": 0,
+    "stdout": "\n",
+    "stderr": ""
+  },
+  "mangle_exp2b": {
+    "rc": 0,
+    "stdout": "\n",
+    "stderr": ""
+  },
+  "mangle_source_lte1": {
+    "rc": 0,
+    "stdout": "Columns: CHAIN, ACTION, BYTES, PACKETS\n# CHAIN       ACTION                BYTES  PACKETS\n;;; ELMO TEST: source via lte1\n0 prerouting  mark-routing  1 016 409 363  829 488\n\n",
+    "stderr": ""
+  },
+  "mangle_source_lte2": {
+    "rc": 0,
+    "stdout": "Columns: CHAIN, ACTION, BYTES, PACKETS\n# CHAIN       ACTION              BYTES  PACKETS\n;;; ELMO TEST: source via lte2\n1 prerouting  mark-routing  946 973 131  757 739\n\n",
+    "stderr": ""
+  },
+  "queue_lte1_parsed": {},
+  "queue_lte2_parsed": {},
+  "status": "PASS",
+  "problems": []
+}

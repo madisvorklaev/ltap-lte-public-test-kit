@@ -33,7 +33,7 @@ import time
 from pathlib import Path
 from typing import Any
 
-VERSION = "0.4.1"
+VERSION = "0.5.0-exp2b"
 
 RADIO_KEYS = {
     "status", "model", "revision", "current-operator", "lac", "cell-id",
@@ -41,6 +41,8 @@ RADIO_KEYS = {
     "session-uptime", "primary-band", "ca-band", "rssi", "rsrp", "rsrq",
     "sinr", "cqi", "ri", "earfcn", "uicc", "imsi", "imei",
 }
+
+EXP2B_QUEUE_NAMES = ["ELMO-EXP2B-LTE1", "ELMO-EXP2B-LTE2"]
 
 
 def now_utc() -> str:
@@ -61,6 +63,7 @@ def load_json(path: Path) -> dict[str, Any]:
 
 
 def save_json(path: Path, obj: Any) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(obj, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
 
@@ -159,6 +162,64 @@ def parse_stats(raw: str) -> dict[str, int]:
     return data
 
 
+def parse_router_kv(raw: str) -> dict[str, str]:
+    data: dict[str, str] = {}
+    compact = " ".join(raw.splitlines())
+    for key, quoted, bare in re.findall(r'([A-Za-z0-9_.-]+)=(?:"([^"]*)"|([^"\s]+))', compact):
+        data[key] = quoted or bare
+    for line in raw.splitlines():
+        m = re.match(r"\s*([A-Za-z0-9_.-]+)\s*:\s*(.*?)\s*$", line)
+        if m:
+            data[m.group(1)] = m.group(2)
+    return data
+
+
+def parse_queue_stats(raw: str) -> dict[str, Any]:
+    data: dict[str, Any] = parse_router_kv(raw)
+    for key in ("queued-bytes", "queued-packets", "dropped", "bytes", "packets", "packet-rate"):
+        if key in data:
+            try:
+                data[key] = int(str(data[key]).replace(" ", ""))
+            except ValueError:
+                pass
+    return data
+
+
+def poll_system_resource(router: RouterSSH) -> dict[str, Any]:
+    try:
+        cp = router.call("/system/resource/print", timeout=6)
+        out: dict[str, Any] = {
+            "rc": cp.returncode,
+            "resource": parse_router_kv(cp.stdout),
+            "raw": cp.stdout,
+        }
+        if cp.stderr.strip():
+            out["stderr"] = cp.stderr.strip()
+        return out
+    except Exception as exc:
+        return {"error": repr(exc)}
+
+
+def poll_exp2b_queues(router: RouterSSH, queue_names: list[str]) -> dict[str, Any]:
+    out: dict[str, Any] = {}
+    for name in queue_names:
+        escaped = name.replace("\\", "\\\\").replace('"', '\\"')
+        try:
+            cp = router.call(f'/queue/tree/print stats detail where name="{escaped}"', timeout=6)
+            raw = cp.stdout
+            item: dict[str, Any] = {"rc": cp.returncode, "raw": raw, "present": bool(raw.strip())}
+            if raw.strip():
+                item["stats"] = parse_queue_stats(raw)
+                item["invalid"] = "Flags:" in raw and " I " in raw.splitlines()[0]
+                item["disabled"] = "Flags:" in raw and " X " in raw.splitlines()[0]
+            if cp.stderr.strip():
+                item["stderr"] = cp.stderr.strip()
+            out[name] = item
+        except Exception as exc:
+            out[name] = {"error": repr(exc), "present": False}
+    return out
+
+
 def parse_counter_lines(raw: str) -> dict[str, int]:
     vals: list[int] = []
     for line in raw.splitlines():
@@ -229,6 +290,8 @@ def telemetry_loop(
     interval: float,
     path: Path,
     stop: threading.Event,
+    queue_names: list[str] | None = None,
+    collect_resource: bool = True,
 ) -> None:
     next_t = time.monotonic()
     with path.open("a", encoding="utf-8") as f:
@@ -237,6 +300,10 @@ def telemetry_loop(
             t0 = time.monotonic()
             for iface in interfaces:
                 row["interfaces"][iface] = poll_router(router, iface)
+            if collect_resource:
+                row["system_resource"] = poll_system_resource(router)
+            if queue_names:
+                row["exp2b_queues"] = poll_exp2b_queues(router, queue_names)
             row["collector_ms"] = round((time.monotonic() - t0) * 1000, 1)
             f.write(json.dumps(row, ensure_ascii=False) + "\n")
             f.flush()
@@ -307,6 +374,7 @@ def build_iperf(
         "iperf3", "-c", server, "-p", str(port), "-4",
         "-B", source_ip, "-t", str(duration),
         "-i", "1", "-J",
+        "--connect-timeout", "5000",
     ]
     if protocol == "udp":
         cmd += ["-u", "-b", bitrate, "-l", str(packet_length)]
@@ -543,6 +611,72 @@ def collect_router_metadata(router: RouterSSH, interfaces: list[str]) -> dict[st
     return out
 
 
+def router_print(router: RouterSSH, command: str, timeout: float = 8) -> dict[str, Any]:
+    try:
+        cp = router.call(command, timeout=timeout)
+        return {"rc": cp.returncode, "stdout": cp.stdout, "stderr": cp.stderr}
+    except Exception as exc:
+        return {"error": repr(exc), "stdout": "", "stderr": ""}
+
+
+def verify_exp2b_condition(router: RouterSSH, condition: str) -> dict[str, Any]:
+    checks = {
+        "condition": condition,
+        "checked_utc": now_utc(),
+        "queue_types_pfifo": router_print(router, '/queue/type/print detail where name="elmo-exp2b-pfifo"'),
+        "queue_types_cake": router_print(router, '/queue/type/print detail where name="elmo-exp2b-cake"'),
+        "queue_lte1": router_print(router, '/queue/tree/print stats detail where name="ELMO-EXP2B-LTE1"'),
+        "queue_lte2": router_print(router, '/queue/tree/print stats detail where name="ELMO-EXP2B-LTE2"'),
+        "mangle_exp2b": router_print(router, '/ip/firewall/mangle/print stats detail where comment~"ELMO EXP2B:"'),
+        "mangle_source_lte1": router_print(router, '/ip/firewall/mangle/print stats detail where comment="ELMO TEST: source via lte1"'),
+        "mangle_source_lte2": router_print(router, '/ip/firewall/mangle/print stats detail where comment="ELMO TEST: source via lte2"'),
+    }
+    for key in ("queue_lte1", "queue_lte2"):
+        checks[f"{key}_parsed"] = parse_queue_stats(str(checks[key].get("stdout") or ""))
+    return checks
+
+
+def exp2b_condition_status(checks: dict[str, Any]) -> tuple[str, list[str]]:
+    condition = str(checks.get("condition") or "A").upper()
+    problems: list[str] = []
+    q1 = str((checks.get("queue_lte1") or {}).get("stdout") or "")
+    q2 = str((checks.get("queue_lte2") or {}).get("stdout") or "")
+    pfifo = str((checks.get("queue_types_pfifo") or {}).get("stdout") or "")
+    cake = str((checks.get("queue_types_cake") or {}).get("stdout") or "")
+    mangle = str((checks.get("mangle_exp2b") or {}).get("stdout") or "")
+
+    queues_present = bool(q1.strip()) or bool(q2.strip())
+    if condition == "A":
+        if queues_present:
+            problems.append("Experiment 2b queue tree exists before baseline A")
+        if mangle.strip():
+            problems.append("Experiment 2b mangle rules exist before baseline A")
+    elif condition == "B":
+        if not (q1.strip() and q2.strip()):
+            problems.append("B requires both ELMO-EXP2B queue trees")
+        if "5M" not in q1 or "5M" not in q2:
+            problems.append("B queue max-limit is not visibly 5M on both paths")
+        if not pfifo.strip():
+            problems.append("B requires queue type elmo-exp2b-pfifo")
+        if not mangle.strip():
+            problems.append("B requires ELMO EXP2B mangle rules")
+        if any(" I " in line for line in q1.splitlines()[0:1] + q2.splitlines()[0:1]):
+            problems.append("B queue tree appears invalid")
+    elif condition == "C":
+        if not (q1.strip() and q2.strip()):
+            problems.append("C requires both ELMO-EXP2B queue trees")
+        if "5M" not in q1 or "5M" not in q2:
+            problems.append("C queue max-limit is not visibly 5M on both paths")
+        for needle in ("cake-bandwidth=0", "cake-autorate-ingress=no", "cake-diffserv=besteffort", "cake-flowmode=flowblind"):
+            if needle not in cake:
+                problems.append(f"C requires {needle}")
+        if not mangle.strip():
+            problems.append("C requires ELMO EXP2B mangle rules")
+        if any(" I " in line for line in q1.splitlines()[0:1] + q2.splitlines()[0:1]):
+            problems.append("C queue tree appears invalid")
+    return ("PASS" if not problems else "FAIL", problems)
+
+
 def campaign_init(args: argparse.Namespace, cfg: dict[str, Any]) -> int:
     server = args.server
     ips = resolve_ipv4(server)
@@ -630,9 +764,19 @@ def run_test(args: argparse.Namespace, cfg: dict[str, Any]) -> int:
         "routing_mode": cfg.get("routing_mode"),
         "routing_table": path_cfg.get("routing_table"),
         "source_rule_comment": source_comment,
+        "exp2b_condition": args.exp2b_condition,
+        "exp2b_queue_names": args.exp2b_queue_names,
     }
     save_json(out_dir / "test.json", meta)
     save_json(out_dir / "router_metadata.json", collect_router_metadata(router, all_lte))
+    condition_check = verify_exp2b_condition(router, args.exp2b_condition)
+    condition_status, condition_problems = exp2b_condition_status(condition_check)
+    condition_check["status"] = condition_status
+    condition_check["problems"] = condition_problems
+    save_json(out_dir / "exp2b_condition_check.json", condition_check)
+    if condition_status != "PASS":
+        router.close()
+        raise SystemExit("Exp2b condition verification failed: " + "; ".join(condition_problems))
     source_rule_before = mangle_rule_counters(router, source_comment)
     source_rule_after: dict[str, Any] = {}
 
@@ -640,7 +784,7 @@ def run_test(args: argparse.Namespace, cfg: dict[str, Any]) -> int:
     tele_path = out_dir / "telemetry.jsonl"
     tele = threading.Thread(
         target=telemetry_loop,
-        args=(router, all_lte, args.telemetry_interval, tele_path, stop),
+        args=(router, all_lte, args.telemetry_interval, tele_path, stop, args.exp2b_queue_names, True),
         daemon=True,
     )
     tele.start()
@@ -658,14 +802,20 @@ def run_test(args: argparse.Namespace, cfg: dict[str, Any]) -> int:
     (out_dir / "iperf_command.txt").write_text(shlex.join(iperf_cmd) + "\n", encoding="utf-8")
 
     rc = 99
+    iperf_timeout = False
     try:
         print(f"Warm-up {args.warmup}s...")
         time.sleep(args.warmup)
         print("Running:", shlex.join(iperf_cmd))
         with (out_dir / "iperf.json").open("w", encoding="utf-8") as fo, \
              (out_dir / "iperf_stderr.txt").open("w", encoding="utf-8") as fe:
-            cp = subprocess.run(iperf_cmd, text=True, stdout=fo, stderr=fe)
-            rc = cp.returncode
+            try:
+                cp = subprocess.run(iperf_cmd, text=True, stdout=fo, stderr=fe, timeout=args.duration + 30)
+                rc = cp.returncode
+            except subprocess.TimeoutExpired:
+                iperf_timeout = True
+                rc = 124
+                fe.write(f"iperf3 timed out after {args.duration + 30}s\n")
         print(f"Cool-down {args.cooldown}s...")
         time.sleep(args.cooldown)
     finally:
@@ -691,6 +841,8 @@ def run_test(args: argparse.Namespace, cfg: dict[str, Any]) -> int:
         iperf_j = {"error": f"could not parse iperf JSON: {exc}"}
 
     iperf_sum = summarize_iperf(iperf_j, args.protocol, args.reverse)
+    if iperf_timeout:
+        iperf_sum["error"] = f"iperf3 timed out after {args.duration + 30}s"
     ping_sum = parse_ping(out_dir / "ping.txt")
     rows = read_telemetry(tele_path)
     radio_target = summarize_radio(rows, iface)
@@ -738,6 +890,7 @@ def run_test(args: argparse.Namespace, cfg: dict[str, Any]) -> int:
         },
         "path_verification": path_verification,
         "events_count": len(events),
+        "exp2b_condition": condition_check,
     }
     save_json(out_dir / "summary.json", summary)
 
@@ -816,6 +969,15 @@ def preflight(args: argparse.Namespace, cfg: dict[str, Any]) -> int:
             print(p["lte_interface"], "LTE keys:", ", ".join(sorted((x.get("lte") or {}).keys())))
             if not (x.get("lte") or {}):
                 problems.append(f"Could not parse LTE monitor for {p['lte_interface']}")
+        condition_check = verify_exp2b_condition(router, args.exp2b_condition)
+        condition_status, condition_problems = exp2b_condition_status(condition_check)
+        save_json(Path(args.output) / "exp2b_preflight_condition_check.json", {
+            **condition_check,
+            "status": condition_status,
+            "problems": condition_problems,
+        })
+        print(f"Exp2b condition {args.exp2b_condition}:", condition_status)
+        problems.extend(condition_problems)
     finally:
         router.close()
 
@@ -846,6 +1008,8 @@ def main() -> int:
 
     pf = sub.add_parser("preflight", help="Validate Linux test IPs, RouterOS SSH/telemetry and campaign")
     pf.add_argument("--campaign", default="campaign.json")
+    pf.add_argument("--exp2b-condition", choices=["A", "B", "C"], default="A")
+    pf.add_argument("--output", default="results/exp2b-stationary-20260813")
 
     rt = sub.add_parser("run", help="Run one test")
     rt.add_argument("--path", required=True, help="Path name from config, e.g. lte1 or lte2")
@@ -862,6 +1026,8 @@ def main() -> int:
     rt.add_argument("--reverse", action="store_true", help="Server -> client download")
     rt.add_argument("--tag", default="manual")
     rt.add_argument("--output", default="results")
+    rt.add_argument("--exp2b-condition", choices=["A", "B", "C"], default="A")
+    rt.add_argument("--exp2b-queue-names", nargs="+", default=EXP2B_QUEUE_NAMES)
 
     args = ap.parse_args()
     cfg_path = Path(args.config)

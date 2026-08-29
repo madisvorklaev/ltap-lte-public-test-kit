@@ -1,0 +1,5 @@
+condition,repeat,kind,path,bitrate,duration_s,rc,run_dir
+A,1,single,lte1,6M,15,0,results/exp2b-stationary-20260813-smoke-clouvider2/runs/20260813-214459_exp2b_A_lte1_6M_r1_lte1_udp_upload
+A,1,single,lte2,6M,15,0,results/exp2b-stationary-20260813-smoke-clouvider2/runs/20260813-214547_exp2b_A_lte2_6M_r1_lte2_udp_upload
+A,1,dual,lte1+lte2,6M,20,0,results/exp2b-stationary-20260813-smoke-clouvider2/runs/20260813-214632_exp2b_A_dual_6M_r1
+A,1,dual,lte1+lte2,5M,20,0,results/exp2b-stationary-20260813-smoke-clouvider2/runs/20260813-214726_exp2b_A_dual_5M_r1

@@ -1,0 +1,5 @@
+{"timestamp_utc": "2026-08-13T18:59:58.342+00:00", "type": "sinr_low_started", "interface": "lte2", "sinr": 2.0, "threshold": 3.0}
+{"timestamp_utc": "2026-08-13T19:00:02.342+00:00", "type": "sinr_low_ended", "interface": "lte2", "sinr": 9.0, "threshold": 3.0}
+{"timestamp_utc": "2026-08-13T19:00:14.342+00:00", "type": "primary_band_changed", "interface": "lte2", "old": "B3@20Mhz earfcn: 1344 phy-cellid: 66", "new": "B7@20Mhz earfcn: 3248 phy-cellid: 171"}
+{"timestamp_utc": "2026-08-13T19:00:29.342+00:00", "type": "sinr_low_started", "interface": "lte2", "sinr": -3.0, "threshold": 3.0}
+{"timestamp_utc": "2026-08-13T19:00:35.342+00:00", "type": "sinr_low_ended", "interface": "lte2", "sinr": 14.0, "threshold": 3.0}

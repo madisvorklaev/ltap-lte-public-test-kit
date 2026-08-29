@@ -1,0 +1,54 @@
+{
+  "dual_wrapper_version": "0.2.0-exp2b",
+  "collector_version": "0.5.0-exp2b",
+  "created_local": "2026-08-13T22:45:35+03:00",
+  "created_utc": "2026-08-13T19:45:35.880+00:00",
+  "group_id": "exp2b_A_dual_6M_scaleway_smoke",
+  "server_hostname": "ping-ams1.online.net",
+  "server_ipv4": "163.172.208.7",
+  "paths": {
+    "lte1": {
+      "source_ip": "192.168.101.201",
+      "lte_interface": "lte1",
+      "server_port": 5208,
+      "port_probe": {
+        "attempts": [
+          {
+            "port": 5208,
+            "rc": 0,
+            "stderr": "",
+            "iperf_error": null,
+            "bps": 8205177.365303424
+          }
+        ]
+      }
+    },
+    "lte2": {
+      "source_ip": "192.168.101.202",
+      "lte_interface": "lte2",
+      "server_port": 5201,
+      "port_probe": {
+        "attempts": [
+          {
+            "port": 5201,
+            "rc": 0,
+            "stderr": "",
+            "iperf_error": null,
+            "bps": 7236626.898502357
+          }
+        ]
+      }
+    }
+  },
+  "protocol": "udp",
+  "target_bitrate": "6M",
+  "packet_length": 1200,
+  "duration_s": 20,
+  "preload_s": 10,
+  "postload_s": 10,
+  "exp2b_condition": "A",
+  "exp2b_queue_names": [
+    "ELMO-EXP2B-LTE1",
+    "ELMO-EXP2B-LTE2"
+  ]
+}

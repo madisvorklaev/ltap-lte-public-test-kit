@@ -1,13 +1,13 @@
 {
-  "state": "server_reselected_before_matrix",
+  "state": "smoke",
   "matrix_version": "0.1.0",
-  "git_commit": "04027562fe74ab26a474d4ba8928990e4282683e",
-  "updated_utc": "2026-08-07T20:47:20.920+00:00",
+  "git_commit": "3b38c8d3b896717834f15de9c3ae9c429f8a6ffa",
+  "updated_utc": "2026-08-07T20:52:07.245+00:00",
   "original_band_settings": {
     "lte1": "",
     "lte2": ""
   },
-  "bands_restored": true,
+  "bands_restored": false,
   "next_configuration": "SMOKE-2x1M",
   "last_completed_configuration": "SMOKE-2x1M",
   "last_status": "FAIL_DUAL",
